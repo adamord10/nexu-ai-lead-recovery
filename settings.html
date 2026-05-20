@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Configuración — Nexu TEAM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: { extend: {
+    colors: {
+      "primary":"#4648d4","primary-container":"#6063ee","primary-fixed":"#e1e0ff","primary-fixed-dim":"#c0c1ff","on-primary":"#ffffff","on-primary-fixed":"#07006c","on-primary-fixed-variant":"#2f2ebe","on-primary-container":"#fffbff",
+      "secondary":"#565e74","secondary-container":"#dae2fd","secondary-fixed":"#dae2fd","secondary-fixed-dim":"#bec6e0","on-secondary":"#ffffff","on-secondary-container":"#5c647a","on-secondary-fixed":"#131b2e","on-secondary-fixed-variant":"#3f465c",
+      "tertiary":"#006c49","tertiary-container":"#00885d","tertiary-fixed":"#6ffbbe","tertiary-fixed-dim":"#4edea3","on-tertiary":"#ffffff","on-tertiary-container":"#000703","on-tertiary-fixed":"#002113","on-tertiary-fixed-variant":"#005236",
+      "error":"#ba1a1a","error-container":"#ffdad6","on-error":"#ffffff","on-error-container":"#93000a",
+      "surface":"#f7f9fb","surface-bright":"#f7f9fb","surface-dim":"#d8dadc","surface-variant":"#e0e3e5","surface-tint":"#494bd6","surface-container":"#eceef0","surface-container-low":"#f2f4f6","surface-container-lowest":"#ffffff","surface-container-high":"#e6e8ea","surface-container-highest":"#e0e3e5",
+      "background":"#f7f9fb","on-background":"#191c1e","on-surface":"#191c1e","on-surface-variant":"#464554","outline":"#767586","outline-variant":"#c7c4d7","inverse-surface":"#2d3133","inverse-on-surface":"#eff1f3","inverse-primary":"#c0c1ff"
+    },
+    borderRadius: { DEFAULT:"0.25rem", lg:"0.5rem", xl:"0.75rem", full:"9999px" },
+    spacing: { container_padding:"2rem", sidebar_width:"240px", stack_md:"1rem", gutter:"1.5rem", header_height:"64px", stack_sm:"0.5rem" },
+    fontFamily: { "body-compact":["Geist"], "display":["Geist"], "data-mono":["JetBrains Mono"], "headline-section":["Geist"], "label-caps":["Geist"], "body-main":["Geist"] },
+    fontSize: {
+      "body-compact":["13px",{lineHeight:"18px",fontWeight:"400"}],
+      "display":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],
+      "data-mono":["12px",{lineHeight:"16px",fontWeight:"500"}],
+      "headline-section":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],
+      "label-caps":["11px",{lineHeight:"16px",letterSpacing:"0.05em",fontWeight:"600"}],
+      "body-main":["14px",{lineHeight:"20px",fontWeight:"400"}]
+    }
+  }}
+}
+</script>
+<style>
+.material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+.icon-fill { font-variation-settings:'FILL' 1; }
+
+/* Toggle */
+.toggle input { display:none; }
+.toggle .track { width: 36px; height: 20px; background: #c7c4d7; border-radius: 9999px; position: relative; transition: background .2s ease; }
+.toggle .thumb { position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; background: #ffffff; border-radius: 9999px; transition: transform .2s ease; box-shadow: 0 1px 2px rgba(0,0,0,.15); }
+.toggle input:checked + .track { background: #4648d4; }
+.toggle input:checked + .track .thumb { transform: translateX(16px); }
+</style>
+</head>
+<body class="bg-surface text-on-surface font-body-main antialiased selection:bg-primary selection:text-white">
+
+<aside class="w-[240px] h-screen fixed left-0 top-0 bg-surface border-r border-outline-variant flex flex-col py-6 px-4 z-20">
+  <div class="mb-8 px-2">
+    <h1 class="font-display text-display font-bold text-primary tracking-tight">Nexu TEAM</h1>
+    <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Lead Rescue Copilot</p>
+  </div>
+  <nav class="flex flex-col gap-1 font-body-main text-body-main">
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="index.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">queue_play_next</span>Recovery Dashboard</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="orchestration.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">schema</span>Flujo de Orquestación</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="conversation.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">forum</span>Conversaciones IA</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="handoff.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">support_agent</span>Escalaciones</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="analytics.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">analytics</span>Analítica</a>
+    <div class="flex-grow"></div>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-primary font-bold border-r-2 border-primary bg-surface-container-low mt-auto" href="settings.html"><span class="material-symbols-outlined icon-fill text-[20px] text-primary">settings</span>Configuración</a>
+  </nav>
+</aside>
+
+<div class="ml-[240px] min-h-screen flex flex-col">
+  <header class="h-header_height fixed top-0 z-10 border-b border-outline-variant shadow-sm bg-surface-bright flex justify-between items-center px-6 ml-[240px] w-[calc(100%-240px)]">
+    <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2 px-3 py-1.5 bg-surface-container rounded-full border border-outline-variant/50">
+        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        <span class="font-label-caps text-label-caps text-on-surface-variant tracking-wider uppercase">IA Core Activa</span>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <button class="px-3 py-1.5 text-body-compact font-body-compact text-on-surface-variant hover:bg-surface-container rounded transition-colors">Descartar</button>
+      <button class="px-4 py-1.5 bg-primary text-on-primary font-body-compact text-body-compact font-medium rounded hover:bg-primary-container transition-colors flex items-center gap-1">
+        <span class="material-symbols-outlined text-[16px]">save</span>Guardar Cambios
+      </button>
+    </div>
+  </header>
+
+  <main class="mt-[64px] p-container_padding flex gap-gutter max-w-[1400px]">
+
+    <!-- Secondary tab nav -->
+    <aside class="w-[220px] flex-shrink-0 sticky top-[88px] self-start">
+      <p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider px-3 mb-3">Configuración</p>
+      <ul class="flex flex-col gap-1 font-body-compact text-body-compact">
+        <li><a href="#general" class="flex items-center gap-2 px-3 py-2 rounded text-primary bg-surface-container-low font-medium"><span class="material-symbols-outlined text-[18px]">tune</span>General</a></li>
+        <li><a href="#ai-behavior" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high"><span class="material-symbols-outlined text-[18px]">smart_toy</span>Comportamiento IA</a></li>
+        <li><a href="#escalation" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high"><span class="material-symbols-outlined text-[18px]">support_agent</span>Reglas de Escalación</a></li>
+        <li><a href="#integrations" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high"><span class="material-symbols-outlined text-[18px]">cable</span>Integraciones</a></li>
+        <li><a href="#team" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high"><span class="material-symbols-outlined text-[18px]">groups</span>Equipo</a></li>
+        <li><a href="#notifications" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high"><span class="material-symbols-outlined text-[18px]">notifications</span>Notificaciones</a></li>
+      </ul>
+    </aside>
+
+    <div class="flex-1 flex flex-col gap-gutter min-w-0">
+      <div>
+        <h2 class="font-display text-display text-on-surface tracking-tight">Configuración</h2>
+        <p class="font-body-main text-body-main text-on-surface-variant mt-1">Controla el comportamiento del copiloto IA y las conexiones del equipo.</p>
+      </div>
+
+      <!-- General -->
+      <section id="general" class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 flex flex-col gap-5">
+        <div class="flex items-center justify-between border-b border-outline-variant/40 pb-4">
+          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">tune</span>General</h3>
+          <span class="font-data-mono text-data-mono text-on-surface-variant">workspace · nexu-mx</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <label class="flex flex-col gap-1">
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Nombre del Workspace</span>
+            <input type="text" value="Nexu TEAM México" class="bg-surface-container-low border border-outline-variant rounded px-3 py-2 font-body-main text-body-main text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"/>
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Zona Horaria</span>
+            <select class="bg-surface-container-low border border-outline-variant rounded px-3 py-2 font-body-main text-body-main text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary">
+              <option>America/Mexico_City (UTC−6)</option>
+              <option>America/Tijuana (UTC−8)</option>
+              <option>America/Cancun (UTC−5)</option>
+            </select>
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Idioma Predeterminado</span>
+            <select class="bg-surface-container-low border border-outline-variant rounded px-3 py-2 font-body-main text-body-main text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary">
+              <option>Español (MX)</option>
+              <option>English (US)</option>
+            </select>
+          </label>
+          <label class="flex flex-col gap-1">
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Moneda</span>
+            <select class="bg-surface-container-low border border-outline-variant rounded px-3 py-2 font-body-main text-body-main text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary">
+              <option>MXN — Peso Mexicano</option>
+              <option>USD — US Dollar</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <!-- AI Behavior -->
+      <section id="ai-behavior" class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 flex flex-col gap-5">
+        <div class="flex items-center justify-between border-b border-outline-variant/40 pb-4">
+          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">smart_toy</span>Comportamiento IA</h3>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 text-[11px] font-medium tracking-wide"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>Modelo activo: nexu-orchestrator-v2.4</span>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <div class="flex items-start justify-between gap-6">
+            <div>
+              <p class="font-body-main text-body-main font-medium text-on-surface">Respuesta Autónoma</p>
+              <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">El copiloto puede responder a leads sin aprobación humana cuando la confianza ≥ umbral.</p>
+            </div>
+            <label class="toggle inline-block flex-shrink-0"><input type="checkbox" checked><span class="track"><span class="thumb"></span></span></label>
+          </div>
+          <div class="flex items-start justify-between gap-6">
+            <div>
+              <p class="font-body-main text-body-main font-medium text-on-surface">Generación Proactiva de Cotizaciones</p>
+              <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Permite que la IA envíe simulaciones con variaciones de enganche cuando detecta fricción de precio.</p>
+            </div>
+            <label class="toggle inline-block flex-shrink-0"><input type="checkbox" checked><span class="track"><span class="thumb"></span></span></label>
+          </div>
+          <div class="flex items-start justify-between gap-6">
+            <div>
+              <p class="font-body-main text-body-main font-medium text-on-surface">Modo de Observación (Sin envío)</p>
+              <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">La IA analiza y prepara borradores, pero un humano debe aprobar cada envío.</p>
+            </div>
+            <label class="toggle inline-block flex-shrink-0"><input type="checkbox"><span class="track"><span class="thumb"></span></span></label>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2 border-t border-outline-variant/40">
+          <label class="flex flex-col gap-2">
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Umbral de Confianza para Auto-envío</span>
+            <div class="flex items-center gap-3">
+              <input type="range" min="50" max="100" value="85" class="flex-1 accent-primary" oninput="this.nextElementSibling.textContent=this.value+'%'"/>
+              <span class="font-data-mono text-data-mono text-primary font-bold w-12 text-right">85%</span>
+            </div>
+            <p class="font-body-compact text-body-compact text-on-surface-variant">Por debajo de este nivel, la IA pide aprobación antes de enviar.</p>
+          </label>
+          <label class="flex flex-col gap-2">
+            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Tono de Voz</span>
+            <select class="bg-surface-container-low border border-outline-variant rounded px-3 py-2 font-body-main text-body-main text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary">
+              <option>Cordial y profesional</option>
+              <option>Cercano y conversacional</option>
+              <option>Directo y eficiente</option>
+            </select>
+            <p class="font-body-compact text-body-compact text-on-surface-variant">Define el estilo del mensaje generado por la IA.</p>
+          </label>
+        </div>
+
+        <label class="flex flex-col gap-2">
+          <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Instrucciones Personalizadas</span>
+          <textarea rows="4" class="bg-surface-container-low border border-outline-variant rounded px-3 py-2 font-body-main text-body-main text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary resize-none">Siempre menciona la promoción de enganche 15% en Mazda CX-5. Nunca prometas tasas sin verificar el perfil del cliente. Usa "tú" para clientes menores de 35.</textarea>
+        </label>
+      </section>
+
+      <!-- Escalation Rules -->
+      <section id="escalation" class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 flex flex-col gap-5">
+        <div class="flex items-center justify-between border-b border-outline-variant/40 pb-4">
+          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">support_agent</span>Reglas de Escalación</h3>
+          <button class="font-body-compact text-body-compact text-primary hover:underline flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">add</span>Nueva regla</button>
+        </div>
+        <ul class="flex flex-col gap-3">
+          <li class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-start justify-between gap-4">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary mt-0.5">bolt</span>
+              <div>
+                <p class="font-body-main text-body-main font-medium text-on-surface">Alta intención + verificación de ingresos</p>
+                <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Si <span class="font-data-mono text-data-mono text-on-surface">score ≥ 80</span> e <span class="font-data-mono text-data-mono text-on-surface">ingresos = verificado</span>, escalar inmediatamente a comercial.</p>
+              </div>
+            </div>
+            <label class="toggle inline-block flex-shrink-0"><input type="checkbox" checked><span class="track"><span class="thumb"></span></span></label>
+          </li>
+          <li class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-start justify-between gap-4">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary mt-0.5">timer</span>
+              <div>
+                <p class="font-body-main text-body-main font-medium text-on-surface">Sin respuesta después de 3 intentos</p>
+                <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Si el lead no responde tras <span class="font-data-mono text-data-mono text-on-surface">3 mensajes</span> en <span class="font-data-mono text-data-mono text-on-surface">72h</span>, pausar y notificar a supervisor.</p>
+              </div>
+            </div>
+            <label class="toggle inline-block flex-shrink-0"><input type="checkbox" checked><span class="track"><span class="thumb"></span></span></label>
+          </li>
+          <li class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-start justify-between gap-4">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-error mt-0.5">priority_high</span>
+              <div>
+                <p class="font-body-main text-body-main font-medium text-on-surface">Sentimiento negativo detectado</p>
+                <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Si la IA detecta <span class="font-data-mono text-data-mono text-on-surface">sentimiento &lt; -0.3</span>, escalar a humano y pausar autonomía.</p>
+              </div>
+            </div>
+            <label class="toggle inline-block flex-shrink-0"><input type="checkbox" checked><span class="track"><span class="thumb"></span></span></label>
+          </li>
+          <li class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-start justify-between gap-4">
+            <div class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-on-surface-variant mt-0.5">attach_money</span>
+              <div>
+                <p class="font-body-main text-body-main font-medium text-on-surface">Vehículo &gt; $700k MXN</p>
+                <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Tickets altos requieren contacto humano de inmediato.</p>
+              </div>
+            </div>
+            <label class="toggle inline-block flex-shrink-0"><input type="checkbox"><span class="track"><span class="thumb"></span></span></label>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Integrations -->
+      <section id="integrations" class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 flex flex-col gap-5">
+        <div class="flex items-center justify-between border-b border-outline-variant/40 pb-4">
+          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">cable</span>Integraciones</h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-[#25D366]/10 flex items-center justify-center"><span class="material-symbols-outlined text-[#25D366]">chat</span></div>
+              <div>
+                <p class="font-body-main text-body-main font-medium text-on-surface">WhatsApp Business API</p>
+                <p class="font-body-compact text-body-compact text-tertiary flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check_circle</span>Conectado · 2 números</p>
+              </div>
+            </div>
+            <button class="font-body-compact text-body-compact text-primary hover:underline">Configurar</button>
+          </div>
+          <div class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="material-symbols-outlined text-primary">contacts</span></div>
+              <div>
+                <p class="font-body-main text-body-main font-medium text-on-surface">Salesforce CRM</p>
+                <p class="font-body-compact text-body-compact text-tertiary flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check_circle</span>Sincronización bidireccional</p>
+              </div>
+            </div>
+            <button class="font-body-compact text-body-compact text-primary hover:underline">Configurar</button>
+          </div>
+          <div class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center"><span class="material-symbols-outlined text-tertiary">mail</span></div>
+              <div>
+                <p class="font-body-main text-body-main font-medium text-on-surface">Gmail / Workspace</p>
+                <p class="font-body-compact text-body-compact text-tertiary flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check_circle</span>Conectado</p>
+              </div>
+            </div>
+            <button class="font-body-compact text-body-compact text-primary hover:underline">Configurar</button>
+          </div>
+          <div class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center"><span class="material-symbols-outlined text-secondary">analytics</span></div>
+              <div>
+                <p class="font-body-main text-body-main font-medium text-on-surface">Google Analytics 4</p>
+                <p class="font-body-compact text-body-compact text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">pending</span>Sin conectar</p>
+              </div>
+            </div>
+            <button class="font-body-compact text-body-compact text-primary hover:underline">Conectar</button>
+          </div>
+          <div class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-on-surface/5 flex items-center justify-center"><span class="material-symbols-outlined text-on-surface">webhook</span></div>
+              <div>
+                <p class="font-body-main text-body-main font-medium text-on-surface">Webhooks personalizados</p>
+                <p class="font-body-compact text-body-compact text-on-surface-variant">3 endpoints configurados</p>
+              </div>
+            </div>
+            <button class="font-body-compact text-body-compact text-primary hover:underline">Administrar</button>
+          </div>
+          <div class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg bg-error/10 flex items-center justify-center"><span class="material-symbols-outlined text-error">notifications_active</span></div>
+              <div>
+                <p class="font-body-main text-body-main font-medium text-on-surface">Slack</p>
+                <p class="font-body-compact text-body-compact text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">pending</span>Sin conectar</p>
+              </div>
+            </div>
+            <button class="font-body-compact text-body-compact text-primary hover:underline">Conectar</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team -->
+      <section id="team" class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col">
+        <div class="p-4 border-b border-outline-variant/50 bg-surface-bright flex items-center justify-between">
+          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">groups</span>Equipo</h3>
+          <button class="px-3 py-1.5 bg-primary text-on-primary font-body-compact text-body-compact font-medium rounded hover:bg-primary-container transition-colors flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">person_add</span>Invitar</button>
+        </div>
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-surface border-b border-outline-variant">
+              <th class="py-3 px-4 font-data-mono text-data-mono uppercase text-on-surface-variant font-medium tracking-wider">Miembro</th>
+              <th class="py-3 px-4 font-data-mono text-data-mono uppercase text-on-surface-variant font-medium tracking-wider">Rol</th>
+              <th class="py-3 px-4 font-data-mono text-data-mono uppercase text-on-surface-variant font-medium tracking-wider">Último Acceso</th>
+              <th class="py-3 px-4 font-data-mono text-data-mono uppercase text-on-surface-variant font-medium tracking-wider text-right">Acciones</th>
+            </tr>
+          </thead>
+          <tbody class="font-body-compact text-body-compact divide-y divide-outline-variant/30">
+            <tr class="hover:bg-surface-container-low">
+              <td class="py-3 px-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-primary/10 text-primary font-data-mono flex items-center justify-center border border-primary/20">JA</div>
+                  <div>
+                    <p class="font-medium text-on-surface">Juan Antonio López</p>
+                    <p class="text-on-surface-variant">juan@nexu.mx</p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 text-[11px] font-medium">Admin</span></td>
+              <td class="py-3 px-4 text-on-surface-variant font-data-mono">Hace 2 min</td>
+              <td class="py-3 px-4 text-right"><button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button></td>
+            </tr>
+            <tr class="hover:bg-surface-container-low">
+              <td class="py-3 px-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-tertiary/10 text-tertiary font-data-mono flex items-center justify-center border border-tertiary/20">MS</div>
+                  <div>
+                    <p class="font-medium text-on-surface">Mariana Solís</p>
+                    <p class="text-on-surface-variant">mariana@nexu.mx</p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant/50 text-[11px] font-medium">Ejecutivo</span></td>
+              <td class="py-3 px-4 text-on-surface-variant font-data-mono">Hace 24 min</td>
+              <td class="py-3 px-4 text-right"><button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button></td>
+            </tr>
+            <tr class="hover:bg-surface-container-low">
+              <td class="py-3 px-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-secondary/10 text-secondary font-data-mono flex items-center justify-center border border-secondary/20">DV</div>
+                  <div>
+                    <p class="font-medium text-on-surface">Diego Vega</p>
+                    <p class="text-on-surface-variant">diego@nexu.mx</p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant/50 text-[11px] font-medium">Ejecutivo</span></td>
+              <td class="py-3 px-4 text-on-surface-variant font-data-mono">Hace 1 hr</td>
+              <td class="py-3 px-4 text-right"><button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button></td>
+            </tr>
+            <tr class="hover:bg-surface-container-low">
+              <td class="py-3 px-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-8 h-8 rounded-full bg-on-surface/10 text-on-surface font-data-mono flex items-center justify-center border border-outline-variant/40">SJ</div>
+                  <div>
+                    <p class="font-medium text-on-surface">Sarah Jenkins</p>
+                    <p class="text-on-surface-variant">sarah@nexu.mx</p>
+                  </div>
+                </div>
+              </td>
+              <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant border border-outline-variant/40 text-[11px] font-medium">Supervisor</span></td>
+              <td class="py-3 px-4 text-on-surface-variant font-data-mono">Hace 3 hr</td>
+              <td class="py-3 px-4 text-right"><button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Notifications -->
+      <section id="notifications" class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 flex flex-col gap-5 mb-8">
+        <div class="flex items-center justify-between border-b border-outline-variant/40 pb-4">
+          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">notifications</span>Notificaciones</h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="font-body-main text-body-main font-medium text-on-surface">Escalación crítica</p>
+              <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Email + Slack en cuanto se dispare una regla crítica.</p>
+            </div>
+            <label class="toggle inline-block flex-shrink-0"><input type="checkbox" checked><span class="track"><span class="thumb"></span></span></label>
+          </div>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="font-body-main text-body-main font-medium text-on-surface">Resumen diario</p>
+              <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Reporte por email cada mañana a las 8:00.</p>
+            </div>
+            <label class="toggle inline-block flex-shrink-0"><input type="checkbox" checked><span class="track"><span class="thumb"></span></span></label>
+          </div>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="font-body-main text-body-main font-medium text-on-surface">Borrador de IA pendiente</p>
+              <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Notificación en la app cuando un borrador requiere aprobación.</p>
+            </div>
+            <label class="toggle inline-block flex-shrink-0"><input type="checkbox" checked><span class="track"><span class="thumb"></span></span></label>
+          </div>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="font-body-main text-body-main font-medium text-on-surface">Reporte semanal de desempeño</p>
+              <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Lunes 9:00 — KPIs del copiloto y equipo.</p>
+            </div>
+            <label class="toggle inline-block flex-shrink-0"><input type="checkbox"><span class="track"><span class="thumb"></span></span></label>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

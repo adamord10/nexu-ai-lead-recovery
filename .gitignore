@@ -1,0 +1,6 @@
+.DS_Store
+stitch_nexu_lead_rescue_copilot/
+node_modules/
+.env
+.env.local
+.vercel
