@@ -5,13 +5,20 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Analítica · Nexu Lead Rescue Copilot</title>
 <meta name="description" content="Funnel y métricas de recuperación: tasa de rescate por etapa (NEW · WARM · COOLING) y placement incremental.">
+<link rel="canonical" href="https://nexu-ai-lead-recovery.vercel.app/analytics.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nexu Lead Rescue Copilot">
 <meta property="og:title" content="Analítica · Nexu Lead Rescue Copilot">
 <meta property="og:description" content="Funnel y métricas de recuperación por etapa.">
+<meta property="og:url" content="https://nexu-ai-lead-recovery.vercel.app/analytics.html">
 <meta property="og:image" content="https://nexu-ai-lead-recovery.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nexu Lead Rescue Copilot dashboard showing 1,492 dormant leads and the active recovery queue.">
 <meta property="og:locale" content="es_MX">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Analítica · Nexu Lead Rescue Copilot">
+<meta name="twitter:description" content="Funnel y métricas de recuperación por etapa.">
 <meta name="twitter:image" content="https://nexu-ai-lead-recovery.vercel.app/og-image.png">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -56,17 +63,17 @@ tailwind.config = {
 <!-- Sidebar -->
 <aside class="w-[240px] h-screen fixed left-0 top-0 bg-surface border-r border-outline-variant flex flex-col py-6 px-4 z-20">
   <div class="mb-8 px-2">
-    <h1 class="font-display text-display font-bold text-primary tracking-tight">Nexu TEAM</h1>
+    <p class="font-display text-display font-bold text-primary tracking-tight">Nexu TEAM</p>
     <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Lead Rescue Copilot</p>
   </div>
   <nav class="flex flex-col gap-1 font-body-main text-body-main">
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="index.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">queue_play_next</span>Recovery Dashboard</a>
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="orchestration.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">schema</span>Flujo de Orquestación</a>
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="conversation.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">forum</span>Conversaciones IA</a>
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="handoff.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">support_agent</span>Escalaciones</a>
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-primary font-bold border-r-2 border-primary bg-surface-container-low" href="analytics.html"><span class="material-symbols-outlined icon-fill text-[20px] text-primary">analytics</span>Analítica</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="index.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary" aria-hidden="true">queue_play_next</span>Recovery Dashboard</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="orchestration.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary" aria-hidden="true">schema</span>Flujo de Orquestación</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="conversations.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary" aria-hidden="true">forum</span>Conversaciones IA</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="handoff.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary" aria-hidden="true">support_agent</span>Escalaciones</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-primary font-bold border-r-2 border-primary bg-surface-container-low" href="analytics.html"><span class="material-symbols-outlined icon-fill text-[20px] text-primary" aria-hidden="true">analytics</span>Analítica</a>
     <div class="flex-grow"></div>
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group mt-auto" href="settings.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">settings</span>Configuración</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group mt-auto" href="settings.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary" aria-hidden="true">settings</span>Configuración</a>
   </nav>
 </aside>
 
@@ -80,12 +87,12 @@ tailwind.config = {
       </div>
       <div class="flex items-center gap-1 text-body-compact font-body-compact text-on-surface-variant">
         <span>Periodo:</span>
-        <button class="px-2.5 py-1 rounded border border-outline-variant bg-surface-container-lowest hover:bg-surface-container transition-colors font-medium text-on-surface">Últimos 30 días <span class="material-symbols-outlined text-[14px] align-middle">expand_more</span></button>
+        <button class="px-2.5 py-1 rounded border border-outline-variant bg-surface-container-lowest hover:bg-surface-container transition-colors font-medium text-on-surface">Últimos 30 días <span class="material-symbols-outlined text-[14px] align-middle" aria-hidden="true">expand_more</span></button>
       </div>
     </div>
     <div class="flex items-center gap-2 text-primary">
-      <button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-all"><span class="material-symbols-outlined">notifications</span></button>
-      <button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-all"><span class="material-symbols-outlined">smart_toy</span></button>
+      <button type="button" aria-label="Notificaciones" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-all"><span class="material-symbols-outlined" aria-hidden="true">notifications</span></button>
+      <button type="button" aria-label="Asistente IA" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-all"><span class="material-symbols-outlined" aria-hidden="true">smart_toy</span></button>
       <div class="w-8 h-8 rounded-full bg-primary/10 text-primary font-data-mono flex items-center justify-center border border-primary/20 ml-2">JA</div>
     </div>
   </header>
@@ -94,11 +101,11 @@ tailwind.config = {
 
     <div class="flex justify-between items-end">
       <div>
-        <h2 class="font-display text-display text-on-surface tracking-tight">Analítica</h2>
+        <h1 class="font-display text-display text-on-surface tracking-tight">Analítica</h1>
         <p class="font-body-main text-body-main text-on-surface-variant mt-1">Desempeño del copiloto de rescate y embudo de recuperación.</p>
       </div>
       <button class="flex items-center gap-2 px-3 py-2 border border-outline-variant rounded bg-surface-container-lowest hover:bg-surface-container transition-colors font-body-compact text-body-compact text-on-surface">
-        <span class="material-symbols-outlined text-[16px]">download</span>Exportar reporte
+        <span class="material-symbols-outlined text-[16px]" aria-hidden="true">download</span>Exportar reporte
       </button>
     </div>
 
@@ -108,7 +115,7 @@ tailwind.config = {
         <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Tasa de Recuperación</span>
         <div class="flex items-end gap-3">
           <span class="font-display text-[28px] leading-none font-bold text-on-surface">31.4%</span>
-          <span class="font-body-compact text-body-compact text-tertiary flex items-center"><span class="material-symbols-outlined text-[14px]">arrow_upward</span> 4.2 pp</span>
+          <span class="font-body-compact text-body-compact text-tertiary flex items-center"><span class="material-symbols-outlined text-[14px]" aria-hidden="true">arrow_upward</span> 4.2 pp</span>
         </div>
         <span class="font-body-compact text-body-compact text-on-surface-variant">vs. periodo anterior</span>
       </div>
@@ -116,7 +123,7 @@ tailwind.config = {
         <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Tiempo a Respuesta</span>
         <div class="flex items-end gap-3">
           <span class="font-display text-[28px] leading-none font-bold text-on-surface">12s</span>
-          <span class="font-body-compact text-body-compact text-tertiary flex items-center"><span class="material-symbols-outlined text-[14px]">arrow_downward</span> 38%</span>
+          <span class="font-body-compact text-body-compact text-tertiary flex items-center"><span class="material-symbols-outlined text-[14px]" aria-hidden="true">arrow_downward</span> 38%</span>
         </div>
         <span class="font-body-compact text-body-compact text-on-surface-variant">Mediana de primer contacto IA</span>
       </div>
@@ -124,7 +131,7 @@ tailwind.config = {
         <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Leads Escalados</span>
         <div class="flex items-end gap-3">
           <span class="font-display text-[28px] leading-none font-bold text-on-surface">128</span>
-          <span class="font-body-compact text-body-compact text-tertiary flex items-center"><span class="material-symbols-outlined text-[14px]">arrow_upward</span> 24</span>
+          <span class="font-body-compact text-body-compact text-tertiary flex items-center"><span class="material-symbols-outlined text-[14px]" aria-hidden="true">arrow_upward</span> 24</span>
         </div>
         <span class="font-body-compact text-body-compact text-on-surface-variant">A ejecutivo comercial</span>
       </div>
@@ -132,7 +139,7 @@ tailwind.config = {
         <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Ingreso Recuperado</span>
         <div class="flex items-end gap-3">
           <span class="font-display text-[28px] leading-none font-bold text-on-surface">$8.4M</span>
-          <span class="font-body-compact text-body-compact text-tertiary flex items-center"><span class="material-symbols-outlined text-[14px]">arrow_upward</span> 18%</span>
+          <span class="font-body-compact text-body-compact text-tertiary flex items-center"><span class="material-symbols-outlined text-[14px]" aria-hidden="true">arrow_upward</span> 18%</span>
         </div>
         <span class="font-body-compact text-body-compact text-on-surface-variant">MXN financiado</span>
       </div>
@@ -154,7 +161,8 @@ tailwind.config = {
         </div>
         <!-- SVG line chart -->
         <div class="relative h-[260px]">
-          <svg viewBox="0 0 700 260" preserveAspectRatio="none" class="w-full h-full">
+          <svg viewBox="0 0 700 260" preserveAspectRatio="none" class="w-full h-full" role="img" aria-label="Tendencia diaria: leads rescatados aumentan de 40 a 180 en 30 días; leads dormidos oscilan entre 50 y 160.">
+<title>Tendencia de Recuperación — Últimos 30 días</title>
             <!-- gridlines -->
             <g stroke="#e0e3e5" stroke-dasharray="3 5">
               <line x1="0" y1="40" x2="700" y2="40"/>

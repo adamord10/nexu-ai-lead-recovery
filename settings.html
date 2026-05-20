@@ -5,13 +5,20 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Configuración · Nexu Lead Rescue Copilot</title>
 <meta name="description" content="Configuración del seller, voz de la IA y reglas de escalación para el copiloto de recuperación de leads.">
+<link rel="canonical" href="https://nexu-ai-lead-recovery.vercel.app/settings.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nexu Lead Rescue Copilot">
 <meta property="og:title" content="Configuración · Nexu Lead Rescue Copilot">
 <meta property="og:description" content="Configuración del seller, voz de la IA y reglas de escalación.">
+<meta property="og:url" content="https://nexu-ai-lead-recovery.vercel.app/settings.html">
 <meta property="og:image" content="https://nexu-ai-lead-recovery.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nexu Lead Rescue Copilot dashboard showing 1,492 dormant leads and the active recovery queue.">
 <meta property="og:locale" content="es_MX">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Configuración · Nexu Lead Rescue Copilot">
+<meta name="twitter:description" content="Configuración del seller, voz de la IA y reglas de escalación.">
 <meta name="twitter:image" content="https://nexu-ai-lead-recovery.vercel.app/og-image.png">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -60,17 +67,17 @@ tailwind.config = {
 
 <aside class="w-[240px] h-screen fixed left-0 top-0 bg-surface border-r border-outline-variant flex flex-col py-6 px-4 z-20">
   <div class="mb-8 px-2">
-    <h1 class="font-display text-display font-bold text-primary tracking-tight">Nexu TEAM</h1>
+    <p class="font-display text-display font-bold text-primary tracking-tight">Nexu TEAM</p>
     <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Lead Rescue Copilot</p>
   </div>
   <nav class="flex flex-col gap-1 font-body-main text-body-main">
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="index.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">queue_play_next</span>Recovery Dashboard</a>
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="orchestration.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">schema</span>Flujo de Orquestación</a>
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="conversation.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">forum</span>Conversaciones IA</a>
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="handoff.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">support_agent</span>Escalaciones</a>
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="analytics.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">analytics</span>Analítica</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="index.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary" aria-hidden="true">queue_play_next</span>Recovery Dashboard</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="orchestration.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary" aria-hidden="true">schema</span>Flujo de Orquestación</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="conversations.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary" aria-hidden="true">forum</span>Conversaciones IA</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="handoff.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary" aria-hidden="true">support_agent</span>Escalaciones</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="analytics.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary" aria-hidden="true">analytics</span>Analítica</a>
     <div class="flex-grow"></div>
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-primary font-bold border-r-2 border-primary bg-surface-container-low mt-auto" href="settings.html"><span class="material-symbols-outlined icon-fill text-[20px] text-primary">settings</span>Configuración</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-primary font-bold border-r-2 border-primary bg-surface-container-low mt-auto" href="settings.html"><span class="material-symbols-outlined icon-fill text-[20px] text-primary" aria-hidden="true">settings</span>Configuración</a>
   </nav>
 </aside>
 
@@ -85,7 +92,7 @@ tailwind.config = {
     <div class="flex items-center gap-2">
       <button class="px-3 py-1.5 text-body-compact font-body-compact text-on-surface-variant hover:bg-surface-container rounded transition-colors">Descartar</button>
       <button class="px-4 py-1.5 bg-primary text-on-primary font-body-compact text-body-compact font-medium rounded hover:bg-primary-container transition-colors flex items-center gap-1">
-        <span class="material-symbols-outlined text-[16px]">save</span>Guardar Cambios
+        <span class="material-symbols-outlined text-[16px]" aria-hidden="true">save</span>Guardar Cambios
       </button>
     </div>
   </header>
@@ -96,25 +103,25 @@ tailwind.config = {
     <aside class="w-[220px] flex-shrink-0 sticky top-[88px] self-start">
       <p class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider px-3 mb-3">Configuración</p>
       <ul class="flex flex-col gap-1 font-body-compact text-body-compact">
-        <li><a href="#general" class="flex items-center gap-2 px-3 py-2 rounded text-primary bg-surface-container-low font-medium"><span class="material-symbols-outlined text-[18px]">tune</span>General</a></li>
-        <li><a href="#ai-behavior" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high"><span class="material-symbols-outlined text-[18px]">smart_toy</span>Comportamiento IA</a></li>
-        <li><a href="#escalation" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high"><span class="material-symbols-outlined text-[18px]">support_agent</span>Reglas de Escalación</a></li>
-        <li><a href="#integrations" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high"><span class="material-symbols-outlined text-[18px]">cable</span>Integraciones</a></li>
-        <li><a href="#team" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high"><span class="material-symbols-outlined text-[18px]">groups</span>Equipo</a></li>
-        <li><a href="#notifications" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high"><span class="material-symbols-outlined text-[18px]">notifications</span>Notificaciones</a></li>
+        <li><a href="#general" class="flex items-center gap-2 px-3 py-2 rounded text-primary bg-surface-container-low font-medium"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">tune</span>General</a></li>
+        <li><a href="#ai-behavior" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">smart_toy</span>Comportamiento IA</a></li>
+        <li><a href="#escalation" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">support_agent</span>Reglas de Escalación</a></li>
+        <li><a href="#integrations" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">cable</span>Integraciones</a></li>
+        <li><a href="#team" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">groups</span>Equipo</a></li>
+        <li><a href="#notifications" class="flex items-center gap-2 px-3 py-2 rounded text-on-surface-variant hover:bg-surface-container-high"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">notifications</span>Notificaciones</a></li>
       </ul>
     </aside>
 
     <div class="flex-1 flex flex-col gap-gutter min-w-0">
       <div>
-        <h2 class="font-display text-display text-on-surface tracking-tight">Configuración</h2>
+        <h1 class="font-display text-display text-on-surface tracking-tight">Configuración</h1>
         <p class="font-body-main text-body-main text-on-surface-variant mt-1">Controla el comportamiento del copiloto IA y las conexiones del equipo.</p>
       </div>
 
       <!-- General -->
       <section id="general" class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 flex flex-col gap-5">
         <div class="flex items-center justify-between border-b border-outline-variant/40 pb-4">
-          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">tune</span>General</h3>
+          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary" aria-hidden="true">tune</span>General</h3>
           <span class="font-data-mono text-data-mono text-on-surface-variant">workspace · nexu-mx</span>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -150,7 +157,7 @@ tailwind.config = {
       <!-- AI Behavior -->
       <section id="ai-behavior" class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 flex flex-col gap-5">
         <div class="flex items-center justify-between border-b border-outline-variant/40 pb-4">
-          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">smart_toy</span>Comportamiento IA</h3>
+          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary" aria-hidden="true">smart_toy</span>Comportamiento IA</h3>
           <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 text-[11px] font-medium tracking-wide"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>Modelo activo: nexu-orchestrator-v2.4</span>
         </div>
 
@@ -182,7 +189,7 @@ tailwind.config = {
           <label class="flex flex-col gap-2">
             <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Umbral de Confianza para Auto-envío</span>
             <div class="flex items-center gap-3">
-              <input type="range" min="50" max="100" value="85" class="flex-1 accent-primary" oninput="this.nextElementSibling.textContent=this.value+'%'"/>
+              <input type="range" min="50" max="100" value="85" class="flex-1 accent-primary" oninput="this.nextElementSibling.textContent=this.value+'%'" aria-label="Umbral de confianza para auto-envío (porcentaje)"/>
               <span class="font-data-mono text-data-mono text-primary font-bold w-12 text-right">85%</span>
             </div>
             <p class="font-body-compact text-body-compact text-on-surface-variant">Por debajo de este nivel, la IA pide aprobación antes de enviar.</p>
@@ -207,13 +214,13 @@ tailwind.config = {
       <!-- Escalation Rules -->
       <section id="escalation" class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 flex flex-col gap-5">
         <div class="flex items-center justify-between border-b border-outline-variant/40 pb-4">
-          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">support_agent</span>Reglas de Escalación</h3>
-          <button class="font-body-compact text-body-compact text-primary hover:underline flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">add</span>Nueva regla</button>
+          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary" aria-hidden="true">support_agent</span>Reglas de Escalación</h3>
+          <button class="font-body-compact text-body-compact text-primary hover:underline flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" aria-hidden="true">add</span>Nueva regla</button>
         </div>
         <ul class="flex flex-col gap-3">
           <li class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-start justify-between gap-4">
             <div class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-primary mt-0.5">bolt</span>
+              <span class="material-symbols-outlined text-primary mt-0.5" aria-hidden="true">bolt</span>
               <div>
                 <p class="font-body-main text-body-main font-medium text-on-surface">Alta intención + verificación de ingresos</p>
                 <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Si <span class="font-data-mono text-data-mono text-on-surface">score ≥ 80</span> e <span class="font-data-mono text-data-mono text-on-surface">ingresos = verificado</span>, escalar inmediatamente a comercial.</p>
@@ -223,7 +230,7 @@ tailwind.config = {
           </li>
           <li class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-start justify-between gap-4">
             <div class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-primary mt-0.5">timer</span>
+              <span class="material-symbols-outlined text-primary mt-0.5" aria-hidden="true">timer</span>
               <div>
                 <p class="font-body-main text-body-main font-medium text-on-surface">Sin respuesta después de 3 intentos</p>
                 <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Si el lead no responde tras <span class="font-data-mono text-data-mono text-on-surface">3 mensajes</span> en <span class="font-data-mono text-data-mono text-on-surface">72h</span>, pausar y notificar a supervisor.</p>
@@ -233,7 +240,7 @@ tailwind.config = {
           </li>
           <li class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-start justify-between gap-4">
             <div class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-error mt-0.5">priority_high</span>
+              <span class="material-symbols-outlined text-error mt-0.5" aria-hidden="true">priority_high</span>
               <div>
                 <p class="font-body-main text-body-main font-medium text-on-surface">Sentimiento negativo detectado</p>
                 <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Si la IA detecta <span class="font-data-mono text-data-mono text-on-surface">sentimiento &lt; -0.3</span>, escalar a humano y pausar autonomía.</p>
@@ -243,7 +250,7 @@ tailwind.config = {
           </li>
           <li class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-start justify-between gap-4">
             <div class="flex items-start gap-3">
-              <span class="material-symbols-outlined text-on-surface-variant mt-0.5">attach_money</span>
+              <span class="material-symbols-outlined text-on-surface-variant mt-0.5" aria-hidden="true">attach_money</span>
               <div>
                 <p class="font-body-main text-body-main font-medium text-on-surface">Vehículo &gt; $700k MXN</p>
                 <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Tickets altos requieren contacto humano de inmediato.</p>
@@ -257,52 +264,52 @@ tailwind.config = {
       <!-- Integrations -->
       <section id="integrations" class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 flex flex-col gap-5">
         <div class="flex items-center justify-between border-b border-outline-variant/40 pb-4">
-          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">cable</span>Integraciones</h3>
+          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary" aria-hidden="true">cable</span>Integraciones</h3>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-center justify-between gap-3">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-lg bg-[#25D366]/10 flex items-center justify-center"><span class="material-symbols-outlined text-[#25D366]">chat</span></div>
+              <div class="w-10 h-10 rounded-lg bg-[#25D366]/10 flex items-center justify-center"><span class="material-symbols-outlined text-[#25D366]" aria-hidden="true">chat</span></div>
               <div>
                 <p class="font-body-main text-body-main font-medium text-on-surface">WhatsApp Business API</p>
-                <p class="font-body-compact text-body-compact text-tertiary flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check_circle</span>Conectado · 2 números</p>
+                <p class="font-body-compact text-body-compact text-tertiary flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" aria-hidden="true">check_circle</span>Conectado · 2 números</p>
               </div>
             </div>
             <button class="font-body-compact text-body-compact text-primary hover:underline">Configurar</button>
           </div>
           <div class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-center justify-between gap-3">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="material-symbols-outlined text-primary">contacts</span></div>
+              <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"><span class="material-symbols-outlined text-primary" aria-hidden="true">contacts</span></div>
               <div>
                 <p class="font-body-main text-body-main font-medium text-on-surface">Salesforce CRM</p>
-                <p class="font-body-compact text-body-compact text-tertiary flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check_circle</span>Sincronización bidireccional</p>
+                <p class="font-body-compact text-body-compact text-tertiary flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" aria-hidden="true">check_circle</span>Sincronización bidireccional</p>
               </div>
             </div>
             <button class="font-body-compact text-body-compact text-primary hover:underline">Configurar</button>
           </div>
           <div class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-center justify-between gap-3">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center"><span class="material-symbols-outlined text-tertiary">mail</span></div>
+              <div class="w-10 h-10 rounded-lg bg-tertiary/10 flex items-center justify-center"><span class="material-symbols-outlined text-tertiary" aria-hidden="true">mail</span></div>
               <div>
                 <p class="font-body-main text-body-main font-medium text-on-surface">Gmail / Workspace</p>
-                <p class="font-body-compact text-body-compact text-tertiary flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check_circle</span>Conectado</p>
+                <p class="font-body-compact text-body-compact text-tertiary flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" aria-hidden="true">check_circle</span>Conectado</p>
               </div>
             </div>
             <button class="font-body-compact text-body-compact text-primary hover:underline">Configurar</button>
           </div>
           <div class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-center justify-between gap-3">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center"><span class="material-symbols-outlined text-secondary">analytics</span></div>
+              <div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center"><span class="material-symbols-outlined text-secondary" aria-hidden="true">analytics</span></div>
               <div>
                 <p class="font-body-main text-body-main font-medium text-on-surface">Google Analytics 4</p>
-                <p class="font-body-compact text-body-compact text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">pending</span>Sin conectar</p>
+                <p class="font-body-compact text-body-compact text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" aria-hidden="true">pending</span>Sin conectar</p>
               </div>
             </div>
             <button class="font-body-compact text-body-compact text-primary hover:underline">Conectar</button>
           </div>
           <div class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-center justify-between gap-3">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-lg bg-on-surface/5 flex items-center justify-center"><span class="material-symbols-outlined text-on-surface">webhook</span></div>
+              <div class="w-10 h-10 rounded-lg bg-on-surface/5 flex items-center justify-center"><span class="material-symbols-outlined text-on-surface" aria-hidden="true">webhook</span></div>
               <div>
                 <p class="font-body-main text-body-main font-medium text-on-surface">Webhooks personalizados</p>
                 <p class="font-body-compact text-body-compact text-on-surface-variant">3 endpoints configurados</p>
@@ -312,10 +319,10 @@ tailwind.config = {
           </div>
           <div class="bg-surface-bright border border-outline-variant/50 rounded-lg p-4 flex items-center justify-between gap-3">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-lg bg-error/10 flex items-center justify-center"><span class="material-symbols-outlined text-error">notifications_active</span></div>
+              <div class="w-10 h-10 rounded-lg bg-error/10 flex items-center justify-center"><span class="material-symbols-outlined text-error" aria-hidden="true">notifications_active</span></div>
               <div>
                 <p class="font-body-main text-body-main font-medium text-on-surface">Slack</p>
-                <p class="font-body-compact text-body-compact text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">pending</span>Sin conectar</p>
+                <p class="font-body-compact text-body-compact text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" aria-hidden="true">pending</span>Sin conectar</p>
               </div>
             </div>
             <button class="font-body-compact text-body-compact text-primary hover:underline">Conectar</button>
@@ -326,8 +333,8 @@ tailwind.config = {
       <!-- Team -->
       <section id="team" class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col">
         <div class="p-4 border-b border-outline-variant/50 bg-surface-bright flex items-center justify-between">
-          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">groups</span>Equipo</h3>
-          <button class="px-3 py-1.5 bg-primary text-on-primary font-body-compact text-body-compact font-medium rounded hover:bg-primary-container transition-colors flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">person_add</span>Invitar</button>
+          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary" aria-hidden="true">groups</span>Equipo</h3>
+          <button class="px-3 py-1.5 bg-primary text-on-primary font-body-compact text-body-compact font-medium rounded hover:bg-primary-container transition-colors flex items-center gap-1"><span class="material-symbols-outlined text-[16px]" aria-hidden="true">person_add</span>Invitar</button>
         </div>
         <table class="w-full text-left border-collapse">
           <thead>
@@ -351,7 +358,7 @@ tailwind.config = {
               </td>
               <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-primary/10 text-primary border border-primary/20 text-[11px] font-medium">Admin</span></td>
               <td class="py-3 px-4 text-on-surface-variant font-data-mono">Hace 2 min</td>
-              <td class="py-3 px-4 text-right"><button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button></td>
+              <td class="py-3 px-4 text-right"><button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">more_horiz</span></button></td>
             </tr>
             <tr class="hover:bg-surface-container-low">
               <td class="py-3 px-4">
@@ -365,7 +372,7 @@ tailwind.config = {
               </td>
               <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant/50 text-[11px] font-medium">Ejecutivo</span></td>
               <td class="py-3 px-4 text-on-surface-variant font-data-mono">Hace 24 min</td>
-              <td class="py-3 px-4 text-right"><button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button></td>
+              <td class="py-3 px-4 text-right"><button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">more_horiz</span></button></td>
             </tr>
             <tr class="hover:bg-surface-container-low">
               <td class="py-3 px-4">
@@ -379,7 +386,7 @@ tailwind.config = {
               </td>
               <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant border border-outline-variant/50 text-[11px] font-medium">Ejecutivo</span></td>
               <td class="py-3 px-4 text-on-surface-variant font-data-mono">Hace 1 hr</td>
-              <td class="py-3 px-4 text-right"><button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button></td>
+              <td class="py-3 px-4 text-right"><button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">more_horiz</span></button></td>
             </tr>
             <tr class="hover:bg-surface-container-low">
               <td class="py-3 px-4">
@@ -393,7 +400,7 @@ tailwind.config = {
               </td>
               <td class="py-3 px-4"><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed-variant border border-outline-variant/40 text-[11px] font-medium">Supervisor</span></td>
               <td class="py-3 px-4 text-on-surface-variant font-data-mono">Hace 3 hr</td>
-              <td class="py-3 px-4 text-right"><button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]">more_horiz</span></button></td>
+              <td class="py-3 px-4 text-right"><button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[18px]" aria-hidden="true">more_horiz</span></button></td>
             </tr>
           </tbody>
         </table>
@@ -402,7 +409,7 @@ tailwind.config = {
       <!-- Notifications -->
       <section id="notifications" class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 flex flex-col gap-5 mb-8">
         <div class="flex items-center justify-between border-b border-outline-variant/40 pb-4">
-          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary">notifications</span>Notificaciones</h3>
+          <h3 class="font-headline-section text-[16px] text-on-surface flex items-center gap-2"><span class="material-symbols-outlined text-primary" aria-hidden="true">notifications</span>Notificaciones</h3>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div class="flex items-start justify-between gap-4">
