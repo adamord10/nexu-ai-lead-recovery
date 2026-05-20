@@ -5,13 +5,20 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Detalle de Lead · Nexu Lead Rescue Copilot</title>
 <meta name="description" content="Vista de un lead: línea de tiempo, AI Insight, razonamiento y el mensaje stage-aware listo para aprobar.">
+<link rel="canonical" href="https://nexu-ai-lead-recovery.vercel.app/lead-juan-marquez.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Nexu Lead Rescue Copilot">
 <meta property="og:title" content="Detalle de Lead · Nexu Lead Rescue Copilot">
 <meta property="og:description" content="Vista de un lead: línea de tiempo, AI Insight, razonamiento y el mensaje stage-aware listo para aprobar.">
+<meta property="og:url" content="https://nexu-ai-lead-recovery.vercel.app/lead-juan-marquez.html">
 <meta property="og:image" content="https://nexu-ai-lead-recovery.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nexu Lead Rescue Copilot dashboard showing 1,492 dormant leads and the active recovery queue.">
 <meta property="og:locale" content="es_MX">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Detalle de Lead · Nexu Lead Rescue Copilot">
+<meta name="twitter:description" content="Vista de un lead: línea de tiempo, AI Insight y mensaje listo para aprobar.">
 <meta name="twitter:image" content="https://nexu-ai-lead-recovery.vercel.app/og-image.png">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -52,28 +59,28 @@ tailwind.config = {
 
 <aside class="w-[240px] h-screen fixed left-0 top-0 bg-surface border-r border-outline-variant flex flex-col py-6 px-4 z-20">
   <div class="mb-8 px-2">
-    <h1 class="font-display text-display font-bold text-primary tracking-tight">Nexu TEAM</h1>
+    <p class="font-display text-display font-bold text-primary tracking-tight">Nexu TEAM</p>
     <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Lead Rescue Copilot</p>
   </div>
   <nav class="flex flex-col gap-1 font-body-main text-body-main">
     <a class="flex items-center gap-3 px-3 py-2.5 rounded text-primary font-bold border-r-2 border-primary bg-surface-container-low" href="index.html">
-      <span class="material-symbols-outlined icon-fill text-[20px] text-primary">queue_play_next</span>Recovery Dashboard
+      <span class="material-symbols-outlined icon-fill text-[20px] text-primary" aria-hidden="true">queue_play_next</span>Recovery Dashboard
     </a>
     <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="orchestration.html">
-      <span class="material-symbols-outlined text-[20px] group-hover:text-primary">schema</span>Flujo de Orquestación
+      <span class="material-symbols-outlined text-[20px] group-hover:text-primary" aria-hidden="true">schema</span>Flujo de Orquestación
     </a>
     <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="conversation.html">
-      <span class="material-symbols-outlined text-[20px] group-hover:text-primary">forum</span>Conversaciones IA
+      <span class="material-symbols-outlined text-[20px] group-hover:text-primary" aria-hidden="true">forum</span>Conversaciones IA
     </a>
     <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="handoff.html">
-      <span class="material-symbols-outlined text-[20px] group-hover:text-primary">support_agent</span>Escalaciones
+      <span class="material-symbols-outlined text-[20px] group-hover:text-primary" aria-hidden="true">support_agent</span>Escalaciones
     </a>
     <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="analytics.html">
-      <span class="material-symbols-outlined text-[20px] group-hover:text-primary">analytics</span>Analítica
+      <span class="material-symbols-outlined text-[20px] group-hover:text-primary" aria-hidden="true">analytics</span>Analítica
     </a>
     <div class="flex-grow"></div>
     <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group mt-auto" href="settings.html">
-      <span class="material-symbols-outlined text-[20px] group-hover:text-primary">settings</span>Configuración
+      <span class="material-symbols-outlined text-[20px] group-hover:text-primary" aria-hidden="true">settings</span>Configuración
     </a>
   </nav>
 </aside>
@@ -85,7 +92,7 @@ tailwind.config = {
       <span class="font-label-caps text-label-caps text-on-surface-variant tracking-wider uppercase">IA Core Activa</span>
     </div>
     <div class="flex items-center gap-2">
-      <button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container"><span class="material-symbols-outlined">notifications</span></button>
+      <button type="button" aria-label="Notificaciones" class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container"><span class="material-symbols-outlined" aria-hidden="true">notifications</span></button>
       <div class="w-8 h-8 rounded-full bg-primary/10 text-primary font-data-mono flex items-center justify-center border border-primary/20 ml-2">JA</div>
     </div>
   </header>
@@ -96,21 +103,21 @@ tailwind.config = {
       <div>
         <div class="flex items-center gap-2 mb-1">
           <a class="text-primary font-body-compact text-body-compact hover:underline flex items-center" href="index.html">
-            <span class="material-symbols-outlined text-[16px] mr-1">arrow_back</span>Volver a la Cola
+            <span class="material-symbols-outlined text-[16px] mr-1" aria-hidden="true">arrow_back</span>Volver a la Cola
           </a>
           <span class="text-outline-variant mx-1">/</span>
           <span class="font-data-mono text-data-mono text-on-surface-variant">ID-84729</span>
         </div>
-        <h2 class="font-headline-section text-headline-section text-on-surface flex items-center gap-3">
+        <h1 class="font-headline-section text-headline-section text-on-surface flex items-center gap-3">
           Detalles del Lead
           <span class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-primary/10 text-primary font-medium text-sm border border-primary/20">
             <span class="w-2.5 h-2.5 rounded-full bg-primary"></span>En curso
           </span>
-        </h2>
+        </h1>
       </div>
       <div class="flex gap-2">
-        <a href="conversation.html" class="px-3 py-2 border border-outline-variant rounded bg-surface-container-lowest hover:bg-surface-container font-body-compact text-body-compact text-on-surface flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">chat</span>Ver conversación</a>
-        <a href="handoff.html" class="px-3 py-2 bg-primary text-on-primary font-body-compact text-body-compact font-medium rounded hover:bg-primary-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">pan_tool</span>Escalar a comercial</a>
+        <a href="conversation.html" class="px-3 py-2 border border-outline-variant rounded bg-surface-container-lowest hover:bg-surface-container font-body-compact text-body-compact text-on-surface flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]" aria-hidden="true">chat</span>Ver conversación</a>
+        <a href="handoff.html" class="px-3 py-2 bg-primary text-on-primary font-body-compact text-body-compact font-medium rounded hover:bg-primary-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]" aria-hidden="true">pan_tool</span>Escalar a comercial</a>
       </div>
     </div>
 
@@ -121,13 +128,13 @@ tailwind.config = {
         <!-- Profile & Vehicle -->
         <div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden flex flex-col md:flex-row">
           <div class="p-6 md:w-1/2 md:border-r border-outline-variant flex flex-col relative">
-            <span class="absolute top-4 right-4 material-symbols-outlined text-outline-variant opacity-50 text-4xl">person</span>
+            <span class="absolute top-4 right-4 material-symbols-outlined text-outline-variant opacity-50 text-4xl" aria-hidden="true">person</span>
             <h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-4">Perfil del Solicitante</h3>
             <div class="flex items-center gap-4 mb-6">
               <div class="w-16 h-16 rounded-full bg-primary/10 text-primary flex items-center justify-center font-headline-section text-headline-section border border-primary/20">JA</div>
               <div>
                 <h4 class="font-headline-section text-headline-section text-on-surface">Juan Antonio Marquez</h4>
-                <p class="font-body-compact text-body-compact text-on-surface-variant flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-[14px]">location_on</span>Mexico City, MX</p>
+                <p class="font-body-compact text-body-compact text-on-surface-variant flex items-center gap-1 mt-0.5"><span class="material-symbols-outlined text-[14px]" aria-hidden="true">location_on</span>Mexico City, MX</p>
               </div>
             </div>
             <div class="grid grid-cols-2 gap-y-4 gap-x-2 mt-auto">
@@ -135,7 +142,7 @@ tailwind.config = {
               <div><p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Email</p><p class="font-body-compact text-body-compact text-on-surface truncate pr-2">juanant@email.com</p></div>
               <div>
                 <p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Ingreso verificado</p>
-                <div class="flex items-center gap-1 text-tertiary"><span class="material-symbols-outlined text-[16px]">check_circle</span><span class="font-body-compact text-body-compact font-medium">Sí</span></div>
+                <div class="flex items-center gap-1 text-tertiary"><span class="material-symbols-outlined text-[16px]" aria-hidden="true">check_circle</span><span class="font-body-compact text-body-compact font-medium">Sí</span></div>
               </div>
               <div>
                 <p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Score de riesgo</p>
@@ -148,7 +155,7 @@ tailwind.config = {
           </div>
 
           <div class="p-6 md:w-1/2 bg-surface-bright flex flex-col relative">
-            <span class="absolute top-4 right-4 material-symbols-outlined text-outline-variant opacity-50 text-4xl">directions_car</span>
+            <span class="absolute top-4 right-4 material-symbols-outlined text-outline-variant opacity-50 text-4xl" aria-hidden="true">directions_car</span>
             <h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-4">Vehículo de Interés</h3>
             <div class="mb-6">
               <h4 class="font-headline-section text-headline-section text-on-surface">Mazda CX-5</h4>
@@ -179,13 +186,13 @@ tailwind.config = {
         <div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm p-6">
           <div class="flex justify-between items-center mb-6">
             <h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Línea de Tiempo</h3>
-            <button class="text-primary font-label-caps text-label-caps flex items-center hover:underline">Expandir Todo <span class="material-symbols-outlined text-[14px] ml-1">expand_more</span></button>
+            <button class="text-primary font-label-caps text-label-caps flex items-center hover:underline">Expandir Todo <span class="material-symbols-outlined text-[14px] ml-1" aria-hidden="true">expand_more</span></button>
           </div>
           <div class="relative pl-6 border-l-2 border-surface-container-high space-y-8 py-2">
             <div class="relative">
               <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 bg-surface-container-lowest border-2 border-primary rounded-full"></div>
               <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-1">
-                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">chat</span><h4 class="font-body-main text-body-main font-semibold text-on-surface">WhatsApp Enviado (Lead Rescue Copilot)</h4></div>
+                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]" aria-hidden="true">chat</span><h4 class="font-body-main text-body-main font-semibold text-on-surface">WhatsApp Enviado (Lead Rescue Copilot)</h4></div>
                 <span class="font-data-mono text-data-mono text-on-surface-variant text-sm">Hoy, 10:45 AM</span>
               </div>
               <p class="font-body-compact text-body-compact text-on-surface-variant mt-1 max-w-2xl">Lead Rescue Copilot inició un seguimiento amistoso sobre la carga de documentos incompletos. Sin respuesta aún.</p>
@@ -193,22 +200,22 @@ tailwind.config = {
             <div class="relative">
               <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 bg-surface-container-highest border-2 border-outline-variant rounded-full"></div>
               <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-1">
-                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-error text-[18px]">description</span><h4 class="font-body-main text-body-main font-semibold text-on-surface">Documentos Abandonados</h4></div>
+                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-error text-[18px]" aria-hidden="true">description</span><h4 class="font-body-main text-body-main font-semibold text-on-surface">Documentos Abandonados</h4></div>
                 <span class="font-data-mono text-data-mono text-on-surface-variant text-sm">Ayer, 4:20 PM</span>
               </div>
               <p class="font-body-compact text-body-compact text-on-surface-variant mt-1 max-w-2xl">El usuario abandonó durante el paso de carga del "Comprobante de Domicilio". Duración de la sesión: 4m 12s.</p>
               <div class="mt-3 bg-surface-bright border border-outline-variant/50 rounded-lg p-3 inline-block">
                 <div class="flex items-center gap-3 text-body-compact font-body-compact text-on-surface">
-                  <span class="material-symbols-outlined text-tertiary">check_circle</span>ID Subida
+                  <span class="material-symbols-outlined text-tertiary" aria-hidden="true">check_circle</span>ID Subida
                   <span class="w-px h-4 bg-outline-variant/50"></span>
-                  <span class="material-symbols-outlined text-outline">pending</span>Comprobante de Domicilio (Faltante)
+                  <span class="material-symbols-outlined text-outline" aria-hidden="true">pending</span>Comprobante de Domicilio (Faltante)
                 </div>
               </div>
             </div>
             <div class="relative">
               <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 bg-surface-container-highest border-2 border-outline-variant rounded-full"></div>
               <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-1">
-                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">calculate</span><h4 class="font-body-main text-body-main font-semibold text-on-surface">Cotización realizada</h4></div>
+                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]" aria-hidden="true">calculate</span><h4 class="font-body-main text-body-main font-semibold text-on-surface">Cotización realizada</h4></div>
                 <span class="font-data-mono text-data-mono text-on-surface-variant text-sm">Ayer, 4:10 PM</span>
               </div>
               <p class="font-body-compact text-body-compact text-on-surface-variant mt-1 max-w-2xl">Cotización enviada variando el enganche entre 15% y 25%.</p>
@@ -216,7 +223,7 @@ tailwind.config = {
             <div class="relative">
               <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 bg-surface-container-highest border-2 border-outline-variant rounded-full"></div>
               <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-1">
-                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-outline-variant text-[18px]">login</span><h4 class="font-body-main text-body-main font-semibold text-on-surface">Solicitud Iniciada</h4></div>
+                <div class="flex items-center gap-2"><span class="material-symbols-outlined text-outline-variant text-[18px]" aria-hidden="true">login</span><h4 class="font-body-main text-body-main font-semibold text-on-surface">Solicitud Iniciada</h4></div>
                 <span class="font-data-mono text-data-mono text-on-surface-variant text-sm">Ayer, 4:05 PM</span>
               </div>
             </div>
@@ -230,10 +237,10 @@ tailwind.config = {
         <div class="bg-primary-fixed/30 border border-primary/20 rounded-xl shadow-sm p-5 relative overflow-hidden">
           <div class="absolute -top-10 -right-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
           <div class="flex items-center justify-between mb-4 relative z-10">
-            <h3 class="font-label-caps text-label-caps text-primary uppercase tracking-wider flex items-center gap-2"><span class="material-symbols-outlined text-[16px] animate-spin-slow">sync</span>Estatus de Orquestación</h3>
+            <h3 class="font-label-caps text-label-caps text-primary uppercase tracking-wider flex items-center gap-2"><span class="material-symbols-outlined text-[16px] animate-spin-slow" aria-hidden="true">sync</span>Estatus de Orquestación</h3>
             <span class="px-2 py-0.5 bg-primary text-on-primary rounded font-data-mono text-data-mono text-xs">EN CURSO</span>
           </div>
-          <div class="relative z-10">
+          <div class="relative z-10" role="status" aria-live="polite">
             <p class="font-body-main text-body-main text-on-surface font-medium mb-1">Seguimiento automatizado por WhatsApp</p>
             <p class="font-body-compact text-body-compact text-on-surface-variant mb-4">Esperando respuesta del cliente</p>
             <div class="w-full bg-surface-container-highest rounded-full h-1.5 mb-2 overflow-hidden">
@@ -246,7 +253,7 @@ tailwind.config = {
         <!-- AI Insight -->
         <div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm p-5">
           <div class="flex items-center gap-2 mb-4">
-            <div class="w-8 h-8 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-primary"><span class="material-symbols-outlined icon-fill">lightbulb</span></div>
+            <div class="w-8 h-8 rounded-lg bg-secondary-fixed/50 flex items-center justify-center text-primary"><span class="material-symbols-outlined icon-fill" aria-hidden="true">lightbulb</span></div>
             <h3 class="font-headline-section text-headline-section text-on-surface text-lg">Insight de IA</h3>
           </div>
           <div class="mb-4">
@@ -256,9 +263,9 @@ tailwind.config = {
           <div class="border-t border-outline-variant/30 pt-4 mt-2">
             <p class="font-label-caps text-label-caps text-on-surface-variant mb-2 uppercase">Señales clave</p>
             <ul class="space-y-2">
-              <li class="flex items-start gap-2 font-body-compact text-body-compact text-on-surface"><span class="material-symbols-outlined text-tertiary text-[16px] mt-0.5">add</span>Ingresos comprobables</li>
-              <li class="flex items-start gap-2 font-body-compact text-body-compact text-on-surface"><span class="material-symbols-outlined text-tertiary text-[16px] mt-0.5">add</span>Empleo estable verificado</li>
-              <li class="flex items-start gap-2 font-body-compact text-body-compact text-on-surface-variant"><span class="material-symbols-outlined text-error text-[16px] mt-0.5">remove</span>Fricción en subida de documentos (móvil)</li>
+              <li class="flex items-start gap-2 font-body-compact text-body-compact text-on-surface"><span class="material-symbols-outlined text-tertiary text-[16px] mt-0.5" aria-hidden="true">add</span>Ingresos comprobables</li>
+              <li class="flex items-start gap-2 font-body-compact text-body-compact text-on-surface"><span class="material-symbols-outlined text-tertiary text-[16px] mt-0.5" aria-hidden="true">add</span>Empleo estable verificado</li>
+              <li class="flex items-start gap-2 font-body-compact text-body-compact text-on-surface-variant"><span class="material-symbols-outlined text-error text-[16px] mt-0.5" aria-hidden="true">remove</span>Fricción en subida de documentos (móvil)</li>
             </ul>
           </div>
         </div>
@@ -271,7 +278,7 @@ tailwind.config = {
             <p class="font-body-compact text-body-compact text-on-surface-variant">Ofrecer recibir el Comprobante de Domicilio vía email para reducir fricción.</p>
           </div>
           <div class="flex gap-2">
-            <button class="flex-1 px-3 py-2 bg-primary text-on-primary font-body-compact text-body-compact font-medium rounded hover:bg-primary-container flex items-center justify-center gap-1.5"><span class="material-symbols-outlined text-[16px]">send</span>Aprobar y Enviar</button>
+            <button type="button" aria-label="Aprobar y enviar mensaje al cliente" class="flex-1 px-3 py-2 bg-primary text-on-primary font-body-compact text-body-compact font-medium rounded hover:bg-primary-container flex items-center justify-center gap-1.5"><span class="material-symbols-outlined text-[16px]" aria-hidden="true">send</span><span>Aprobar y Enviar</span></button>
             <button class="px-3 py-2 border border-outline-variant rounded bg-surface-container-lowest hover:bg-surface-container font-body-compact text-body-compact text-on-surface">Editar</button>
           </div>
         </div>

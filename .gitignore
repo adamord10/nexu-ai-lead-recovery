@@ -4,3 +4,8 @@ node_modules/
 .env
 .env.local
 .vercel
+
+# local agent harness state (autoskills, claude code)
+.claude/
+.agents/
+skills-lock.json
