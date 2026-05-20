@@ -12,6 +12,9 @@ All UI data flows through `js/data.js`. It exposes `window.NexuData` with four a
 | `NexuData.getLead(id)` | `Lead \| null` | `GET /api/leads/:id` |
 | `NexuData.listConversations()` | `ConversationSummary[]` | `GET /api/conversations` |
 | `NexuData.getConversation(leadId)` | `Conversation \| null` | `GET /api/leads/:id/conversation` |
+| `NexuData.listEscalations()` | `EscalationSummary[]` | `GET /api/escalations` |
+| `NexuData.getEscalation(escId)` | `Escalation \| null` | `GET /api/escalations/:id` |
+| `NexuData.getEscalationByLead(leadId)` | `Escalation \| null` | `GET /api/leads/:id/escalation` |
 
 All functions return Promises, so a fetch swap is one line per function.
 
@@ -126,7 +129,48 @@ Returned by `listConversations()`. Derived from `Lead` + `Conversation` for list
 
 - `conversations.html` — calls `listConversations()` to render the archive
 - `conversation.html?id={leadId}` — calls `getLeadWithConversation(id)` to render the chat
+- `escalations.html` — calls `listEscalations()` to render the queue
+- `handoff.html?id={escalationId}` — calls `getEscalationWithLead(escId)` to render the review card
 - Lead detail pages (`lead-*.html`) — currently hardcoded HTML; safe to migrate to `getLead(id)` later
+
+### `Escalation`
+
+```ts
+{
+  id: string;             // ESC-ID like "8839-AX"
+  leadId: string;         // FK to Lead
+  reason: string;         // short label shown in the list
+  status: { key: "urgent" | "in_review" | "pending" | "accepted"; label: string };
+  priority: "critical" | "high" | "medium" | "low";  // drives UI accent
+  createdAt: string;      // pre-formatted display string
+  assignedTo: { id: string; name: string; role: string; initials: string } | null;
+
+  // Long-form fields shown on the detail page
+  headline: string;       // big H3 in the alert card
+  subhead: string;        // sub-line
+  contextSummary: string; // paragraph
+  recommendedPitch: string;  // quoted draft, pre-formatted with quotes
+  objection: { title: string; body: string };
+}
+```
+
+### `EscalationSummary` (list view)
+
+```ts
+{
+  id: string;
+  leadId: string;
+  leadName: string;
+  initials: string;
+  vehicle: string;
+  score: number;
+  reason: string;
+  status: Escalation["status"];
+  priority: Escalation["priority"];
+  createdAt: string;
+  assignedTo: Escalation["assignedTo"];
+}
+```
 
 ## Status keys
 

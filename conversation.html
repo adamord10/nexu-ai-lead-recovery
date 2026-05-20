@@ -30,7 +30,7 @@ tailwind.config = {
     <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="index.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">queue_play_next</span>Recovery Dashboard</a>
     <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="orchestration.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">schema</span>Flujo de Orquestación</a>
     <a class="flex items-center gap-3 px-3 py-2.5 rounded text-primary font-bold border-r-2 border-primary bg-surface-container-low" href="conversations.html"><span class="material-symbols-outlined icon-fill text-[20px] text-primary">forum</span>Conversaciones IA</a>
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="handoff.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">support_agent</span>Escalaciones</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="escalations.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">support_agent</span>Escalaciones</a>
     <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="analytics.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">analytics</span>Analítica</a>
     <div class="flex-grow"></div>
     <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group mt-auto" href="settings.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">settings</span>Configuración</a>
@@ -45,7 +45,7 @@ tailwind.config = {
   </div>
   <div class="flex items-center gap-2">
     <a id="link-profile" href="#" class="px-3 py-1.5 border border-outline-variant rounded bg-surface-container-lowest hover:bg-surface-container font-body-compact text-body-compact text-on-surface flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">person</span>Perfil del lead</a>
-    <a href="escalation.html" class="px-3 py-1.5 bg-primary text-on-primary font-body-compact text-body-compact font-medium rounded hover:bg-primary-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">trending_up</span>Escalar</a>
+    <a id="link-escalar" href="escalations.html" class="px-3 py-1.5 bg-primary text-on-primary font-body-compact text-body-compact font-medium rounded hover:bg-primary-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">trending_up</span>Escalar</a>
   </div>
 </header>
 
@@ -143,6 +143,10 @@ tailwind.config = {
   document.title = `${lead.name} — Conversación · Nexu Lead Rescue Copilot`;
   document.getElementById("hdr-leadId").textContent = `${lead.name} · ${lead.leadId}`;
   document.getElementById("link-profile").href = `lead-${lead.id}.html`;
+
+  // Deep-link "Escalar" to this lead's escalation if one exists
+  const escalation = await NexuData.getEscalationByLead(lead.id);
+  if (escalation) document.getElementById("link-escalar").href = `handoff.html?id=${escalation.id}`;
 
   document.getElementById("chat-avatar").textContent = lead.initials;
   document.getElementById("chat-name").textContent = lead.name;
