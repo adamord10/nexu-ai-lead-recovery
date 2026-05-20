@@ -217,6 +217,81 @@ const CONVERSATIONS = {
 };
 
 /**
+ * Escalation = a lead handed off (or pending handoff) to a human seller.
+ * Keyed by escalationId (the customer-facing ESC-ID).
+ */
+const ESCALATIONS = {
+  "8839-AX": {
+    id: "8839-AX",
+    leadId: "juan-marquez",
+    reason: "Documentación SOC2 personalizada",
+    status: { key: "in_review", label: "En revisión" },
+    priority: "high",
+    createdAt: "Hoy, 10:48 AM",
+    assignedTo: { id: "carlos-m", name: "Carlos M.", role: "Especialista Senior de Recuperación", initials: "CM" },
+    headline: "Lead con Alta Intención Detectado",
+    subhead: "Calificación automatizada completada. Se requiere intervención humana para cerrar negociación compleja.",
+    contextSummary: 'El lead ha interactuado con el portal de cotización 4 veces en las últimas 48 horas. La interacción vía WhatsApp con el Asistente de IA de Nexu indica una fuerte intención de compra para el plan de Financiamiento Enterprise, pero el progreso se estancó durante las discusiones sobre verificación de ingresos y cláusulas de indemnización personalizadas. La complejidad de la conversación superó los umbrales automatizados, necesitando negociación humana. El análisis de sentimiento sigue siendo positivo pero resalta precaución respecto al cumplimiento legal.',
+    recommendedPitch: '"Hola Juan Antonio, noté que estabas explorando nuestras opciones de financiamiento para el Mazda CX-5 iTouring. Dados los requerimientos de verificación de tu organización, nuestra documentación estándar podría no cubrir completamente tus necesidades específicas. Tengo autorización para ofrecerte nuestro paquete avanzado de cumplimiento y guiarte a través de términos personalizados de enganche entre 15% y 20%. ¿Tienes 10 minutos mañana para alinearnos en esto?"',
+    objection: {
+      title: "Incertidumbre en Documentación",
+      body: 'El lead solicitó explícitamente una "carta puente SOC2 Tipo II ISO-27001" combinada con una matriz personalizada de límite de responsabilidad, la cual la IA no pudo localizar en los repositorios estándar orientados a externos. Además, hubo fricción en el proceso de verificación de ingresos.'
+    }
+  },
+  "8835-PT": {
+    id: "8835-PT",
+    leadId: "natasha-ramirez",
+    reason: "Solicitud explícita de asesor",
+    status: { key: "accepted", label: "Aceptado" },
+    priority: "high",
+    createdAt: "Hoy, 11:18 AM",
+    assignedTo: { id: "mariana-s", name: "Mariana Solís", role: "Especialista Comercial Senior", initials: "MS" },
+    headline: "Lead Listo para Cierre",
+    subhead: "Aprobación crediticia al 92% y urgencia explícita (fecha objetivo del 15). Mariana ya tomó control.",
+    contextSummary: 'Cliente con score crediticio sólido (Bureau 742), pre-aprobación al 92% y urgencia clara de cierre antes del 15. Pidió hablar con asesor humano directamente. Sentimiento muy positivo. Mariana Solís inició contacto vía WhatsApp y ofreció disponibilidad para firma jueves 14 o viernes 15.',
+    recommendedPitch: '"Hola Natasha, soy Mariana de Nexu. Tengo disponibilidad jueves 14 a las 10:00 o viernes 15 a las 16:00 para que firmemos en sucursal. Confirmé que la unidad Honda Civic Touring 2020 que viste está disponible. ¿Cuál horario te acomoda mejor?"',
+    objection: {
+      title: "Coordinación logística",
+      body: "Único punto pendiente: confirmar agenda de la cliente, disponibilidad de inventario y traslado de la unidad si aplica. Cero objeciones de producto o precio."
+    }
+  },
+  "8829-MX": {
+    id: "8829-MX",
+    leadId: "david-manriquez",
+    reason: "Ticket alto · uso comercial",
+    status: { key: "pending", label: "Pendiente" },
+    priority: "medium",
+    createdAt: "Ayer, 1:40 PM",
+    assignedTo: { id: "diego-v", name: "Diego Vega", role: "Asesor Flotillas", initials: "DV" },
+    headline: "Operación Comercial — Beneficios Fiscales",
+    subhead: "Persona moral con RFC empresarial. Ticket alto. Requiere asesoría fiscal y esquema flotilla.",
+    contextSummary: 'Cliente registrado como persona moral con interés explícito en uso comercial (transporte ligero) de la Ford F-150 Lariat 2021. Documentación completa, sin fricción operativa. Sin embargo el ticket ($679k MXN + accesorios) y el caso de uso ameritan asesoría fiscal: deducción ISR/IVA, esquema flotilla, comparativa contra leasing comercial. La IA no tiene autoridad para emitir términos personalizados.',
+    recommendedPitch: '"Hola David, soy Diego del equipo de Flotillas de Nexu. Vi que tu F-150 será para uso comercial. Te preparé una comparativa de tres escenarios: financiamiento tradicional con deducción ISR, leasing comercial puro, y nuestro esquema flotilla con tasa preferencial a partir de 2 unidades. ¿Tienes 15 min hoy para revisarla juntos?"',
+    objection: {
+      title: "Comparación con leasing externo",
+      body: "El cliente probablemente está cotizando con bancos y arrendadoras tradicionales. Nuestra ventaja es la velocidad (firma en 48h) y la asesoría fiscal incluida, no necesariamente la tasa más baja. Posicionar en valor, no en precio."
+    }
+  },
+  "8821-AR": {
+    id: "8821-AR",
+    leadId: "elena-hernandez",
+    reason: "Sentimiento negativo detectado",
+    status: { key: "urgent", label: "Urgente" },
+    priority: "critical",
+    createdAt: "Hoy, 11:04 AM",
+    assignedTo: null,
+    headline: "Riesgo de Pérdida — Intervención Urgente",
+    subhead: "Sentiment score -0.78. La IA pausó la orquestación. Sin asesor asignado — requiere triage inmediato.",
+    contextSummary: 'Cliente con capacidad económica (ingresos verificados $85k/mes) pero el ticket del Tesla Model 3 Long Range 2023 ($919k MXN) es alto y comparó con otras opciones. Tras 3 cotizaciones en 5 días respondió: "Ya me cansé de los precios, voy a buscar otra opción". La regla de sentimiento <-0.3 disparó pausa automática. La pérdida sería por percepción de precio, no por incapacidad — recuperable si interviene un humano con autoridad para descuento o cambio de configuración.',
+    recommendedPitch: '"Hola Elena, soy [Asesor] del equipo de Nexu. Entiendo la frustración con las cotizaciones. Antes de que cierres con otra opción, déjame ofrecerte dos rutas: (1) un descuento por pago anticipado del 8% en el Long Range, o (2) el Model 3 Estándar con casi el mismo equipamiento y mensualidad ~25% menor. ¿Cuál te interesa explorar?"',
+    objection: {
+      title: "Percepción de precio elevado",
+      body: "La mensualidad estimada ($17,200 MXN) cabe dentro de su perfil financiero pero está cerca del techo psicológico. El cliente menciona alternativas dos veces. Hay riesgo real de pérdida si no se llama en menos de 30 min."
+    }
+  }
+};
+
+/**
  * Public API consumed by the UI. All functions return Promises so swapping
  * the body to fetch() is a one-line change.
  */
@@ -267,5 +342,48 @@ window.NexuData = {
       this.getConversation(leadId)
     ]);
     return { lead, conversation };
+  },
+
+  /** GET /api/escalations → EscalationSummary[] */
+  async listEscalations() {
+    const summaries = await Promise.all(
+      Object.values(ESCALATIONS).map(async esc => {
+        const lead = await this.getLead(esc.leadId);
+        return {
+          id: esc.id,
+          leadId: esc.leadId,
+          leadName: lead ? lead.name : "(lead desconocido)",
+          initials: lead ? lead.initials : "??",
+          vehicle: lead ? `${lead.vehicle.year} ${lead.vehicle.make} ${lead.vehicle.model}` : "—",
+          score: lead ? lead.score : 0,
+          reason: esc.reason,
+          status: esc.status,
+          priority: esc.priority,
+          createdAt: esc.createdAt,
+          assignedTo: esc.assignedTo
+        };
+      })
+    );
+    return summaries;
+  },
+
+  /** GET /api/escalations/:id → Escalation (with lead) */
+  async getEscalation(escalationId) {
+    return Promise.resolve(ESCALATIONS[escalationId] || null);
+  },
+
+  /** Helper for the detail page */
+  async getEscalationWithLead(escalationId) {
+    const escalation = await this.getEscalation(escalationId);
+    if (!escalation) return { escalation: null, lead: null };
+    const lead = await this.getLead(escalation.leadId);
+    return { escalation, lead };
+  },
+
+  /** Find escalation by lead id (used when "Escalar" is clicked from a lead view) */
+  async getEscalationByLead(leadId) {
+    return Promise.resolve(
+      Object.values(ESCALATIONS).find(e => e.leadId === leadId) || null
+    );
   }
 };

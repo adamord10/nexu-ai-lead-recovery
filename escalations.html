@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Conversaciones IA · Nexu Lead Rescue Copilot</title>
-<meta name="description" content="Archivo de todas las conversaciones IA con leads de financiamiento Nexu. Una por lead, con score, intención y último mensaje.">
+<title>Escalaciones · Nexu Lead Rescue Copilot</title>
+<meta name="description" content="Cola de escalaciones — leads transferidos del copiloto IA a un asesor humano. Ordenada por prioridad.">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
@@ -29,8 +29,8 @@ tailwind.config = {
   <nav class="flex flex-col gap-1 font-body-main text-body-main">
     <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="index.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">queue_play_next</span>Recovery Dashboard</a>
     <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="orchestration.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">schema</span>Flujo de Orquestación</a>
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-primary font-bold border-r-2 border-primary bg-surface-container-low" href="conversations.html"><span class="material-symbols-outlined icon-fill text-[20px] text-primary">forum</span>Conversaciones IA</a>
-    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="escalations.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">support_agent</span>Escalaciones</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="conversations.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">forum</span>Conversaciones IA</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-primary font-bold border-r-2 border-primary bg-surface-container-low" href="escalations.html"><span class="material-symbols-outlined icon-fill text-[20px] text-primary">support_agent</span>Escalaciones</a>
     <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="analytics.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">analytics</span>Analítica</a>
     <div class="flex-grow"></div>
     <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group mt-auto" href="settings.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">settings</span>Configuración</a>
@@ -54,13 +54,13 @@ tailwind.config = {
   <main class="mt-[64px] p-container_padding flex flex-col gap-gutter max-w-[1400px]">
     <div class="flex justify-between items-end">
       <div>
-        <h2 class="font-display text-display text-on-surface tracking-tight">Conversaciones IA</h2>
-        <p class="font-body-main text-body-main text-on-surface-variant mt-1">Archivo de todas las conversaciones activas y recientes con leads.</p>
+        <h2 class="font-display text-display text-on-surface tracking-tight">Escalaciones</h2>
+        <p class="font-body-main text-body-main text-on-surface-variant mt-1">Leads transferidos a un asesor humano. Ordenado por prioridad.</p>
       </div>
       <div class="flex gap-2">
         <div class="relative">
           <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant">search</span>
-          <input id="search" class="pl-9 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded font-body-compact text-body-compact text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary w-[260px]" placeholder="Buscar por nombre o vehículo..." type="text">
+          <input id="search" class="pl-9 pr-4 py-2 bg-surface-container-lowest border border-outline-variant rounded font-body-compact text-body-compact text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary w-[260px]" placeholder="Buscar lead, asesor o ESC-ID..." type="text">
         </div>
         <button class="px-3 py-2 border border-outline-variant rounded bg-surface-container-lowest hover:bg-surface-container font-body-compact text-body-compact text-on-surface flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">filter_list</span>Filtrar</button>
       </div>
@@ -69,32 +69,45 @@ tailwind.config = {
     <!-- KPI strip -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
       <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 flex flex-col gap-1">
-        <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Total Hilos</span>
+        <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Total Activas</span>
         <span class="font-headline-section text-[24px] font-bold text-on-surface" id="kpi-total">—</span>
       </div>
       <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 flex flex-col gap-1">
-        <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">En curso</span>
-        <span class="font-headline-section text-[24px] font-bold text-primary" id="kpi-active">—</span>
+        <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Urgentes</span>
+        <span class="font-headline-section text-[24px] font-bold text-error" id="kpi-urgent">—</span>
       </div>
       <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 flex flex-col gap-1">
-        <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Esperando respuesta</span>
-        <span class="font-headline-section text-[24px] font-bold text-on-surface" id="kpi-waiting">—</span>
+        <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">En Revisión</span>
+        <span class="font-headline-section text-[24px] font-bold text-primary" id="kpi-review">—</span>
       </div>
       <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 flex flex-col gap-1">
-        <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Escaladas</span>
-        <span class="font-headline-section text-[24px] font-bold text-tertiary" id="kpi-escalated">—</span>
+        <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Aceptadas</span>
+        <span class="font-headline-section text-[24px] font-bold text-tertiary" id="kpi-accepted">—</span>
       </div>
     </div>
 
-    <!-- Conversation archive list -->
+    <!-- Escalation list -->
     <div class="bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex flex-col">
       <div class="flex items-center justify-between p-4 border-b border-outline-variant/50 bg-surface-bright">
-        <h3 class="font-headline-section text-[16px] text-on-surface">Hilos de Conversación</h3>
+        <h3 class="font-headline-section text-[16px] text-on-surface">Cola de Escalaciones</h3>
         <span class="font-data-mono text-data-mono text-on-surface-variant" id="result-count">—</span>
       </div>
-      <ul id="conversation-list" class="divide-y divide-outline-variant/30">
-        <li class="p-6 text-center text-on-surface-variant font-body-compact text-body-compact">Cargando conversaciones...</li>
-      </ul>
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="bg-surface border-b border-outline-variant">
+            <th class="py-3 px-4 font-data-mono text-data-mono uppercase text-on-surface-variant font-medium tracking-wider">ESC-ID</th>
+            <th class="py-3 px-4 font-data-mono text-data-mono uppercase text-on-surface-variant font-medium tracking-wider">Cliente</th>
+            <th class="py-3 px-4 font-data-mono text-data-mono uppercase text-on-surface-variant font-medium tracking-wider">Razón</th>
+            <th class="py-3 px-4 font-data-mono text-data-mono uppercase text-on-surface-variant font-medium tracking-wider w-[180px]">Score</th>
+            <th class="py-3 px-4 font-data-mono text-data-mono uppercase text-on-surface-variant font-medium tracking-wider">Asesor</th>
+            <th class="py-3 px-4 font-data-mono text-data-mono uppercase text-on-surface-variant font-medium tracking-wider">Creado</th>
+            <th class="py-3 px-4 font-data-mono text-data-mono uppercase text-on-surface-variant font-medium tracking-wider text-right">Estado</th>
+          </tr>
+        </thead>
+        <tbody id="esc-tbody" class="font-body-compact text-body-compact divide-y divide-outline-variant/30">
+          <tr><td colspan="7" class="p-6 text-center text-on-surface-variant font-body-compact text-body-compact">Cargando escalaciones...</td></tr>
+        </tbody>
+      </table>
     </div>
   </main>
 </div>
@@ -102,90 +115,89 @@ tailwind.config = {
 <script src="js/data.js"></script>
 <script>
 (async function () {
-  const list = document.getElementById("conversation-list");
+  const tbody = document.getElementById("esc-tbody");
   const search = document.getElementById("search");
+  const rows = await NexuData.listEscalations();
 
-  const conversations = await NexuData.listConversations();
+  // Sort by priority (critical > high > medium)
+  const priorityRank = { critical: 0, high: 1, medium: 2, low: 3 };
+  rows.sort((a, b) => (priorityRank[a.priority] ?? 9) - (priorityRank[b.priority] ?? 9));
 
   const statusBadge = (status) => {
     const cls = {
-      in_progress: "bg-primary/10 text-primary border-primary/20",
-      waiting:     "bg-surface-container-high text-on-surface-variant border-outline-variant/50",
-      escalated:   "bg-tertiary/10 text-tertiary border-tertiary/30",
-      at_risk:     "bg-error-container text-on-error-container border-error/30"
+      urgent:    "bg-error-container text-on-error-container border-error/30",
+      in_review: "bg-primary/10 text-primary border-primary/20",
+      pending:   "bg-surface-container-high text-on-surface-variant border-outline-variant/50",
+      accepted:  "bg-tertiary/10 text-tertiary border-tertiary/30"
     }[status.key] || "bg-surface-container text-on-surface-variant border-outline-variant/50";
     const dotCls = {
-      in_progress: "bg-primary animate-pulse",
-      waiting:     "bg-outline",
-      escalated:   "bg-tertiary",
-      at_risk:     "bg-error animate-pulse"
+      urgent: "bg-error animate-pulse",
+      in_review: "bg-primary animate-pulse",
+      pending: "bg-outline",
+      accepted: "bg-tertiary"
     }[status.key] || "bg-outline";
-    return `<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full ${cls} border text-[11px] font-medium tracking-wide">
+    return `<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full ${cls} border text-[11px] font-medium tracking-wide whitespace-nowrap">
       <span class="w-1.5 h-1.5 rounded-full ${dotCls}"></span>${status.label}
     </span>`;
   };
 
-  const sentimentColor = (label) => {
-    if (!label) return "text-on-surface-variant";
-    if (/Positivo|Decidido/i.test(label)) return "text-tertiary";
-    if (/Negativo|Frustrado/i.test(label)) return "text-error";
-    return "text-on-surface-variant";
-  };
+  const scoreColor = (score) => score >= 75 ? "bg-primary" : score >= 50 ? "bg-tertiary" : score >= 25 ? "bg-secondary" : "bg-error";
 
-  function render(rows) {
-    if (!rows.length) {
-      list.innerHTML = `<li class="p-6 text-center text-on-surface-variant font-body-compact text-body-compact">Sin resultados.</li>`;
-      document.getElementById("result-count").textContent = "0 hilos";
+  function render(list) {
+    if (!list.length) {
+      tbody.innerHTML = `<tr><td colspan="7" class="p-6 text-center text-on-surface-variant font-body-compact text-body-compact">Sin resultados.</td></tr>`;
+      document.getElementById("result-count").textContent = "0 escalaciones";
       return;
     }
-    list.innerHTML = rows.map(c => `
-      <li>
-        <a href="conversation.html?id=${c.leadId}" class="flex items-start gap-4 p-4 hover:bg-surface-container-low transition-colors cursor-pointer group">
-          <div class="w-11 h-11 rounded-full bg-primary/10 text-primary font-data-mono flex items-center justify-center border border-primary/20 shrink-0">${c.initials}</div>
-          <div class="flex-1 min-w-0">
-            <div class="flex items-baseline justify-between gap-3">
-              <div class="flex items-center gap-2 min-w-0">
-                <span class="font-body-main text-body-main font-semibold text-on-surface truncate">${c.leadName}</span>
-                <span class="font-body-compact text-body-compact text-on-surface-variant whitespace-nowrap">· ${c.vehicle}</span>
-              </div>
-              <span class="font-data-mono text-data-mono text-on-surface-variant whitespace-nowrap">${c.lastMessageAt || ""}</span>
+    tbody.innerHTML = list.map(r => `
+      <tr class="${r.status.key === 'urgent' ? 'bg-error-container/10' : ''} hover:bg-surface-container-low transition-colors cursor-pointer" onclick="window.location='handoff.html?id=${r.id}'">
+        <td class="py-3 px-4 font-data-mono text-data-mono ${r.status.key === 'urgent' ? 'text-error font-bold' : 'text-on-surface-variant'}">#${r.id}</td>
+        <td class="py-3 px-4">
+          <div class="flex items-center gap-2">
+            <div class="w-7 h-7 rounded-full bg-primary/10 text-primary font-data-mono text-[11px] flex items-center justify-center border border-primary/20">${r.initials}</div>
+            <div class="min-w-0">
+              <p class="font-medium text-on-surface truncate">${r.leadName}</p>
+              <p class="text-on-surface-variant text-[11px] truncate">${r.vehicle}</p>
             </div>
-            <div class="flex items-center gap-2 mt-1">
-              ${statusBadge(c.status)}
-              ${c.intent ? `<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Intención:</span><span class="font-body-compact text-body-compact text-on-surface">${c.intent.label} <span class="font-data-mono text-data-mono text-on-surface-variant">${c.intent.confidence}%</span></span>` : ""}
-              ${c.sentiment ? `<span class="font-label-caps text-label-caps text-on-surface-variant uppercase ml-2">Sent:</span><span class="font-body-compact text-body-compact ${sentimentColor(c.sentiment.label)}">${c.sentiment.label}</span>` : ""}
-            </div>
-            <p class="font-body-compact text-body-compact text-on-surface-variant mt-2 line-clamp-1">
-              ${c.lastMessageRole === "ai" ? '<span class="material-symbols-outlined text-[14px] align-middle text-primary mr-1">smart_toy</span>' : ""}${c.lastMessage || "<em>Sin mensajes</em>"}
-            </p>
           </div>
-          <div class="flex flex-col items-end gap-1.5 shrink-0">
-            <div class="flex items-center gap-1.5">
-              <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Score</span>
-              <span class="font-data-mono text-data-mono text-primary font-bold">${c.score}</span>
-            </div>
-            <span class="font-data-mono text-data-mono text-on-surface-variant">${c.messageCount} msg</span>
-            <span class="material-symbols-outlined text-[18px] text-outline-variant group-hover:text-primary transition-colors">chevron_right</span>
+        </td>
+        <td class="py-3 px-4 text-on-surface-variant">${r.reason}</td>
+        <td class="py-3 px-4">
+          <div class="flex items-center gap-2">
+            <div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden"><div class="${scoreColor(r.score)} h-full rounded-full" style="width:${r.score}%"></div></div>
+            <span class="font-data-mono text-data-mono ${r.score >= 75 ? 'text-primary font-bold' : 'text-on-surface-variant'}">${r.score}</span>
           </div>
-        </a>
-      </li>
+        </td>
+        <td class="py-3 px-4">
+          ${r.assignedTo ? `
+            <div class="flex items-center gap-2">
+              <div class="w-6 h-6 rounded-full bg-primary/10 text-primary font-data-mono text-[10px] flex items-center justify-center border border-primary/20">${r.assignedTo.initials}</div>
+              <span class="text-on-surface">${r.assignedTo.name}</span>
+            </div>` : '<span class="text-on-surface-variant italic">— sin asignar —</span>'}
+        </td>
+        <td class="py-3 px-4 text-on-surface-variant font-data-mono text-[11px]">${r.createdAt}</td>
+        <td class="py-3 px-4 text-right">${statusBadge(r.status)}</td>
+      </tr>
     `).join("");
-    document.getElementById("result-count").textContent = `${rows.length} hilos`;
+    document.getElementById("result-count").textContent = `${list.length} escalaciones`;
   }
 
   // KPIs
-  document.getElementById("kpi-total").textContent = conversations.length;
-  document.getElementById("kpi-active").textContent = conversations.filter(c => c.status.key === "in_progress").length;
-  document.getElementById("kpi-waiting").textContent = conversations.filter(c => c.status.key === "waiting" || c.status.key === "at_risk").length;
-  document.getElementById("kpi-escalated").textContent = conversations.filter(c => c.status.key === "escalated").length;
+  document.getElementById("kpi-total").textContent = rows.length;
+  document.getElementById("kpi-urgent").textContent = rows.filter(r => r.status.key === "urgent").length;
+  document.getElementById("kpi-review").textContent = rows.filter(r => r.status.key === "in_review").length;
+  document.getElementById("kpi-accepted").textContent = rows.filter(r => r.status.key === "accepted").length;
 
-  render(conversations);
+  render(rows);
 
   search.addEventListener("input", (e) => {
     const q = e.target.value.trim().toLowerCase();
-    if (!q) return render(conversations);
-    render(conversations.filter(c =>
-      c.leadName.toLowerCase().includes(q) || c.vehicle.toLowerCase().includes(q)
+    if (!q) return render(rows);
+    render(rows.filter(r =>
+      r.leadName.toLowerCase().includes(q) ||
+      r.id.toLowerCase().includes(q) ||
+      (r.assignedTo && r.assignedTo.name.toLowerCase().includes(q)) ||
+      r.reason.toLowerCase().includes(q)
     ));
   });
 })();
