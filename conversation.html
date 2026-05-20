@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Conversación WhatsApp · Nexu Lead Rescue Copilot</title>
+<meta name="description" content="Hilo de WhatsApp con borrador generado por Claude en español mexicano. Un clic para enviar al lead.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nexu Lead Rescue Copilot">
+<meta property="og:title" content="Conversación WhatsApp · Nexu Lead Rescue Copilot">
+<meta property="og:description" content="Hilo de WhatsApp con borrador generado por Claude en español mexicano. Un clic para enviar al lead.">
+<meta property="og:image" content="https://nexu-ai-lead-recovery.vercel.app/og-image.png">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nexu-ai-lead-recovery.vercel.app/og-image.png">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: { extend: {
+    colors: {
+      "primary":"#4648d4","primary-container":"#6063ee","primary-fixed":"#e1e0ff","primary-fixed-dim":"#c0c1ff","on-primary":"#ffffff","on-primary-fixed":"#07006c","on-primary-fixed-variant":"#2f2ebe","on-primary-container":"#fffbff",
+      "secondary":"#565e74","secondary-container":"#dae2fd","secondary-fixed":"#dae2fd","secondary-fixed-dim":"#bec6e0","on-secondary":"#ffffff","on-secondary-container":"#5c647a","on-secondary-fixed":"#131b2e","on-secondary-fixed-variant":"#3f465c",
+      "tertiary":"#006c49","tertiary-container":"#00885d","tertiary-fixed":"#6ffbbe","tertiary-fixed-dim":"#4edea3","on-tertiary":"#ffffff","on-tertiary-container":"#000703","on-tertiary-fixed":"#002113","on-tertiary-fixed-variant":"#005236",
+      "error":"#ba1a1a","error-container":"#ffdad6","on-error":"#ffffff","on-error-container":"#93000a",
+      "surface":"#f7f9fb","surface-bright":"#f7f9fb","surface-dim":"#d8dadc","surface-variant":"#e0e3e5","surface-tint":"#494bd6","surface-container":"#eceef0","surface-container-low":"#f2f4f6","surface-container-lowest":"#ffffff","surface-container-high":"#e6e8ea","surface-container-highest":"#e0e3e5",
+      "background":"#f7f9fb","on-background":"#191c1e","on-surface":"#191c1e","on-surface-variant":"#464554","outline":"#767586","outline-variant":"#c7c4d7","inverse-surface":"#2d3133","inverse-on-surface":"#eff1f3","inverse-primary":"#c0c1ff"
+    },
+    borderRadius: { DEFAULT:"0.25rem", lg:"0.5rem", xl:"0.75rem", full:"9999px" },
+    spacing: { container_padding:"2rem", sidebar_width:"240px", stack_md:"1rem", gutter:"1.5rem", header_height:"64px", stack_sm:"0.5rem" },
+    fontFamily: { "body-compact":["Geist"], "display":["Geist"], "data-mono":["JetBrains Mono"], "headline-section":["Geist"], "label-caps":["Geist"], "body-main":["Geist"] },
+    fontSize: {
+      "body-compact":["13px",{lineHeight:"18px",fontWeight:"400"}],
+      "display":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],
+      "data-mono":["12px",{lineHeight:"16px",fontWeight:"500"}],
+      "headline-section":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],
+      "label-caps":["11px",{lineHeight:"16px",letterSpacing:"0.05em",fontWeight:"600"}],
+      "body-main":["14px",{lineHeight:"20px",fontWeight:"400"}]
+    }
+  }}
+}
+</script>
+<style>.material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; } .icon-fill { font-variation-settings:'FILL' 1; }</style>
+</head>
+<body class="bg-background text-on-surface font-body-main h-screen overflow-hidden">
+
+<aside class="w-[240px] h-screen fixed left-0 top-0 bg-surface border-r border-outline-variant flex flex-col py-6 px-4 z-20">
+  <div class="mb-8 px-2">
+    <h1 class="font-display text-display font-bold text-primary tracking-tight">Nexu TEAM</h1>
+    <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Lead Rescue Copilot</p>
+  </div>
+  <nav class="flex flex-col gap-1 font-body-main text-body-main">
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="index.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">queue_play_next</span>Recovery Dashboard</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="orchestration.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">schema</span>Flujo de Orquestación</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-primary font-bold border-r-2 border-primary bg-surface-container-low" href="conversation.html"><span class="material-symbols-outlined icon-fill text-[20px] text-primary">forum</span>Conversaciones IA</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="handoff.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">support_agent</span>Escalaciones</a>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group" href="analytics.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">analytics</span>Analítica</a>
+    <div class="flex-grow"></div>
+    <a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors group mt-auto" href="settings.html"><span class="material-symbols-outlined text-[20px] group-hover:text-primary">settings</span>Configuración</a>
+  </nav>
+</aside>
+
+<header class="h-header_height fixed top-0 z-10 border-b border-outline-variant shadow-sm bg-surface-bright flex justify-between items-center px-6 ml-[240px] w-[calc(100%-240px)]">
+  <div class="flex items-center gap-3">
+    <a href="index.html" class="text-on-surface-variant hover:text-primary text-body-compact font-body-compact flex items-center"><span class="material-symbols-outlined text-[18px] mr-1">arrow_back</span>Recovery Dashboard</a>
+    <span class="text-outline-variant mx-1">/</span>
+    <span class="font-body-compact text-body-compact text-on-surface">Conversación · ID-84729</span>
+  </div>
+  <div class="flex items-center gap-2">
+    <a href="lead-juan-marquez.html" class="px-3 py-1.5 border border-outline-variant rounded bg-surface-container-lowest hover:bg-surface-container font-body-compact text-body-compact text-on-surface flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">person</span>Perfil del lead</a>
+    <a href="escalation.html" class="px-3 py-1.5 bg-primary text-on-primary font-body-compact text-body-compact font-medium rounded hover:bg-primary-container flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px]">trending_up</span>Escalar</a>
+  </div>
+</header>
+
+<main class="ml-[240px] mt-header_height w-[calc(100%-240px)] h-[calc(100vh-64px)] p-container_padding flex gap-gutter bg-surface-container-lowest">
+
+  <!-- LEFT: WhatsApp -->
+  <div class="w-1/2 flex flex-col bg-surface-container-lowest border border-outline-variant rounded-lg overflow-hidden flex-shrink-0">
+    <div class="bg-surface p-4 border-b border-outline-variant flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-primary/10 text-primary font-data-mono flex items-center justify-center border border-primary/20">JA</div>
+        <div>
+          <h2 class="font-headline-section text-headline-section text-on-surface">Juan Antonio Márquez</h2>
+          <p class="font-body-compact text-body-compact text-on-surface-variant">+52 55 1234 5678 · <span class="text-tertiary">Activo</span></p>
+        </div>
+      </div>
+      <button class="p-2 rounded hover:bg-surface-container-high"><span class="material-symbols-outlined text-on-surface-variant">more_vert</span></button>
+    </div>
+
+    <div class="flex-1 overflow-y-auto p-4 flex flex-col gap-4 bg-background">
+      <div class="text-center my-2"><span class="bg-surface px-3 py-1 rounded text-body-compact font-body-compact text-on-surface-variant border border-outline-variant">Hoy</span></div>
+
+      <!-- User -->
+      <div class="flex justify-start">
+        <div class="max-w-[75%] bg-surface-container-highest text-on-surface p-3 rounded-lg rounded-tl-sm shadow-sm">
+          <p class="font-body-main text-body-main">Hola, estaba viendo el paquete de financiamiento para el Mazda CX-5 pero no estoy seguro de si aplica para mi perfil.</p>
+          <span class="font-data-mono text-data-mono text-on-surface-variant text-[10px] block text-right mt-1">10:42 AM</span>
+        </div>
+      </div>
+      <!-- AI -->
+      <div class="flex justify-end">
+        <div class="max-w-[75%] bg-primary-fixed text-on-primary-fixed p-3 rounded-lg rounded-tr-sm shadow-sm relative group">
+          <p class="font-body-main text-body-main">Hola Juan Antonio. Noté que estabas explorando el plan iTouring con enganche 20%. ¿Te gustaría que te envíe los requisitos detallados y un simulador con opciones de 15% y 18%?</p>
+          <span class="font-data-mono text-data-mono text-on-primary-fixed-variant text-[10px] block text-right mt-1">10:44 AM <span class="material-symbols-outlined text-[12px] align-middle">done_all</span></span>
+          <div class="absolute -left-6 top-1/2 -translate-y-1/2 opacity-70"><span class="material-symbols-outlined text-primary text-[18px]" title="AI Generated">smart_toy</span></div>
+        </div>
+      </div>
+      <!-- User -->
+      <div class="flex justify-start">
+        <div class="max-w-[75%] bg-surface-container-highest text-on-surface p-3 rounded-lg rounded-tl-sm shadow-sm">
+          <p class="font-body-main text-body-main">Sí, por favor. ¿Y cuál es la diferencia en la tasa entre los tres?</p>
+          <span class="font-data-mono text-data-mono text-on-surface-variant text-[10px] block text-right mt-1">10:46 AM</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-surface p-3 border-t border-outline-variant flex items-center gap-2">
+      <button class="p-2 text-on-surface-variant"><span class="material-symbols-outlined">add</span></button>
+      <input class="flex-1 bg-surface-container-low border border-outline-variant rounded-full px-4 py-2 text-body-main font-body-main text-on-surface-variant opacity-70" disabled placeholder="Orquestación IA Activa — Entrada manual deshabilitada." type="text">
+      <button class="p-2 text-on-surface-variant opacity-50"><span class="material-symbols-outlined">mic</span></button>
+    </div>
+  </div>
+
+  <!-- RIGHT: AI Orchestration Panel -->
+  <div class="w-1/2 flex flex-col gap-6 overflow-y-auto pr-2">
+    <div class="flex items-center justify-between">
+      <h2 class="font-headline-section text-headline-section text-on-surface">Panel de Orquestación IA</h2>
+      <div class="flex items-center gap-2 bg-surface-container-low px-3 py-1 rounded border border-outline-variant">
+        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+        <span class="font-data-mono text-data-mono text-primary">ANÁLISIS ACTIVO</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 shadow-sm relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+        <p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">Intención Primaria</p>
+        <p class="font-headline-section text-headline-section text-on-surface">Comparar tasas de financiamiento</p>
+        <div class="mt-4"><span class="bg-primary-container text-on-primary-container font-data-mono text-data-mono px-2 py-0.5 rounded">94% CONFIANZA</span></div>
+      </div>
+      <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 shadow-sm relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-1 h-full bg-tertiary-container"></div>
+        <p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">Sentimiento</p>
+        <p class="font-headline-section text-headline-section text-on-surface">Curioso · Positivo</p>
+        <div class="mt-4"><span class="bg-surface-container text-on-surface font-data-mono text-data-mono px-2 py-0.5 rounded border border-outline-variant">Tendencia: Estable</span></div>
+      </div>
+    </div>
+
+    <!-- Next best action -->
+    <div class="bg-surface-container-lowest border border-primary rounded-lg p-5 shadow-[0_4px_12px_rgba(0,0,0,0.05)]">
+      <div class="flex items-start justify-between mb-4">
+        <div>
+          <p class="font-label-caps text-label-caps text-primary mb-1 uppercase flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">auto_awesome</span>Acción Recomendada</p>
+          <h3 class="font-headline-section text-[22px] leading-tight font-semibold text-on-surface">Enviar Tabla de Tasas + Link de Documentos</h3>
+        </div>
+        <span class="bg-surface-variant text-on-surface-variant font-data-mono text-data-mono px-2 py-1 rounded">EN COLA AUTO.</span>
+      </div>
+      <p class="font-body-main text-body-main text-on-surface-variant mb-6">La IA ha preparado un resumen comparativo de tasas (15% / 18% / 20% enganche) y un enlace seguro para subir documentos faltantes, personalizado al perfil del cliente.</p>
+      <div class="flex gap-3">
+        <button class="bg-primary text-on-primary font-body-main font-medium px-6 py-2 rounded shadow-sm hover:bg-primary-container transition-colors flex-1 flex justify-center items-center gap-2">Aprobar y Enviar <span class="material-symbols-outlined text-[18px]">send</span></button>
+        <button class="bg-surface-container-lowest text-on-surface border border-outline font-body-main font-medium px-6 py-2 rounded hover:bg-surface-container transition-colors">Editar Borrador</button>
+      </div>
+    </div>
+
+    <!-- Extracted entities -->
+    <div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-4 shadow-sm">
+      <p class="font-label-caps text-label-caps text-on-surface-variant mb-3 uppercase border-b border-surface-variant pb-2">Datos de Contexto Extraídos</p>
+      <div class="grid grid-cols-2 gap-y-3">
+        <div><p class="font-body-compact text-body-compact text-on-surface-variant">Vehículo</p><p class="font-body-main text-body-main font-medium text-on-surface">Mazda CX-5 iTouring</p></div>
+        <div><p class="font-body-compact text-body-compact text-on-surface-variant">Plazo</p><p class="font-body-main text-body-main font-medium text-on-surface">48 meses</p></div>
+        <div><p class="font-body-compact text-body-compact text-on-surface-variant">Mensualidad</p><p class="font-body-main text-body-main font-medium text-on-surface">$7,850 MXN</p></div>
+        <div><p class="font-body-compact text-body-compact text-on-surface-variant">Preocupación clave</p><p class="font-body-main text-body-main font-medium text-on-surface">Diferencia de tasa</p></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

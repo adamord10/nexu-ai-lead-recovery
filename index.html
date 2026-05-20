@@ -1,7 +1,23 @@
-<!DOCTYPE html><html lang="en" style=""><head>
+<!DOCTYPE html><html lang="es-MX" style=""><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Recovery AI Dashboard</title>
+<title>Recovery Dashboard · Nexu Lead Rescue Copilot</title>
+<meta name="description" content="AI copilot que clasifica cada lead de financiamiento Nexu (NEW · WARM · COOLING), redacta un seguimiento por WhatsApp en español y deja que comercial apruebe el envío con un clic.">
+<link rel="canonical" href="https://nexu-ai-lead-recovery.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nexu Lead Rescue Copilot">
+<meta property="og:title" content="Nexu Lead Rescue Copilot — Recovery Dashboard">
+<meta property="og:description" content="Rescatar la intención antes de que se enfríe. AI copilot que sigue cada lead de Nexu y redacta el WhatsApp en español, listo para aprobar.">
+<meta property="og:url" content="https://nexu-ai-lead-recovery.vercel.app/">
+<meta property="og:image" content="https://nexu-ai-lead-recovery.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nexu Lead Rescue Copilot dashboard showing 1,492 dormant leads and the active recovery queue.">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nexu Lead Rescue Copilot">
+<meta name="twitter:description" content="Rescatar la intención antes de que se enfríe. AI copilot de seguimiento de leads para Nexu.">
+<meta name="twitter:image" content="https://nexu-ai-lead-recovery.vercel.app/og-image.png">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
@@ -112,18 +128,19 @@
 <p class="font-body-compact text-body-compact text-on-surface-variant mt-1">Lead Rescue Copilot</p>
 </div>
 <nav class="flex flex-col gap-1 font-body-main text-body-main">
-
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-primary font-bold border-r-2 border-primary bg-surface-container-low cursor-pointer active:scale-95" href="#">
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-primary font-bold border-r-2 border-primary bg-surface-container-low cursor-pointer active:scale-95" href="index.html">
 <span class="material-symbols-outlined icon-fill text-[20px] text-primary">queue_play_next</span>Recovery Dashboard</a>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 group" href="#">
-<span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-primary transition-colors">analytics</span>
-                Analítica
-            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 group" href="orchestration.html">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-primary transition-colors">schema</span>Flujo de Orquestación</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 group" href="conversation.html">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-primary transition-colors">forum</span>Conversaciones IA</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 group" href="handoff.html">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-primary transition-colors">support_agent</span>Escalaciones</a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 group" href="analytics.html">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-primary transition-colors">analytics</span>Analítica</a>
 <div class="flex-grow"></div>
-<a class="flex items-center gap-3 px-3 py-2.5 rounded-DEFAULT text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 group mt-auto" href="#">
-<span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-primary transition-colors">settings</span>
-                Configuración
-            </a>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded text-on-surface-variant font-medium hover:bg-surface-container-high transition-colors cursor-pointer active:scale-95 group mt-auto" href="settings.html">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:text-primary transition-colors">settings</span>Configuración</a>
 </nav>
 </aside>
 <div class="ml-[240px] min-h-screen flex flex-col">
@@ -212,7 +229,7 @@
 </tr>
 </thead>
 <tbody class="font-body-compact text-body-compact divide-y divide-outline-variant/30">
-<tr class="hover:bg-surface-container-low transition-colors group cursor-default">
+<tr tabindex="0" role="link" aria-label="Abrir detalle del lead Juan Antonio Marquez" class="hover:bg-surface-container-low transition-colors group cursor-pointer" onclick="window.location='lead-juan-marquez.html'" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.location='lead-juan-marquez.html';}">
 <td class="py-3 px-4 font-medium text-on-surface">Juan Antonio Marquez</td>
 <td class="py-3 px-4 text-on-surface-variant">2022 Mazda CX-5</td>
 <td class="py-3 px-4">
@@ -235,7 +252,7 @@
 <span class="material-symbols-outlined text-[18px] text-outline-variant">check_circle</span>
 </td>
 </tr>
-<tr class="hover:bg-surface-container-low transition-colors group cursor-default">
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer" onclick="window.location='lead-antonio-poveda.html'">
 <td class="py-3 px-4 font-medium text-on-surface">Antonio Poveda Martínez</td>
 <td class="py-3 px-4 text-on-surface-variant">2019 Toyota Tacoma</td>
 <td class="py-3 px-4">
@@ -258,7 +275,7 @@
 <span class="material-symbols-outlined text-[18px] text-outline-variant">check_circle</span>
 </td>
 </tr>
-<tr class="bg-error-container/5 hover:bg-error-container/10 transition-colors group cursor-default">
+<tr class="bg-error-container/5 hover:bg-error-container/10 transition-colors group cursor-pointer" onclick="window.location='lead-elena-hernandez.html'">
 <td class="py-3 px-4 font-medium text-on-surface">Elena Rosa Hernández</td>
 <td class="py-3 px-4 text-on-surface-variant">2023 Tesla Model 3</td>
 <td class="py-3 px-4">
@@ -278,7 +295,7 @@
 
 </td>
 </tr>
-<tr class="hover:bg-surface-container-low transition-colors group cursor-default">
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer" onclick="window.location='lead-david-manriquez.html'">
 <td class="py-3 px-4 font-medium text-on-surface">David Manriquez Salazar</td>
 <td class="py-3 px-4 text-on-surface-variant">2021 Ford F-150</td>
 <td class="py-3 px-4">
@@ -299,7 +316,7 @@
 <span class="material-symbols-outlined text-[18px] text-outline-variant">check_circle</span>
 </td>
 </tr>
-<tr class="hover:bg-surface-container-low transition-colors group cursor-default">
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer" onclick="window.location='lead-natasha-ramirez.html'">
 <td class="py-3 px-4 font-medium text-on-surface">Natasha Pomelo Ramírez</td>
 <td class="py-3 px-4 text-on-surface-variant">2020 Honda Civic</td>
 <td class="py-3 px-4">
